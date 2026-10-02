@@ -107,22 +107,22 @@ export const SimulationsModal: React.FC<Props> = ({ isOpen, activeSimId = 'moon-
   const planetWeight = Math.round(massKg * planets[selectedPlanet].g);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-slate-950/85 backdrop-blur-md">
-      <div className="relative w-full max-w-5xl max-h-[92vh] bg-slate-900 border border-indigo-500/40 rounded-3xl shadow-2xl overflow-hidden flex flex-col">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/60 backdrop-blur-sm">
+      <div className="relative w-full max-w-5xl max-h-[92vh] bg-white border border-slate-300 rounded-3xl shadow-2xl overflow-hidden flex flex-col text-slate-900">
         {/* Top Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-800 bg-slate-900/90">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 bg-white">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-indigo-500/20 border border-indigo-500/40 flex items-center justify-center text-indigo-400">
-              <Sparkles className="w-5 h-5 animate-pulse" />
+            <div className="w-10 h-10 rounded-2xl bg-emerald-600 flex items-center justify-center text-white shadow-sm">
+              <Sparkles className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-black text-white font-fredoka flex items-center gap-2">
+              <h2 className="text-lg font-bold text-slate-900 font-fredoka flex items-center gap-2">
                 Akıllı Tahta İnteraktif Fen Laboratuvarı
-                <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
                   Canlı Deneyler
                 </span>
               </h2>
-              <p className="text-xs text-slate-400">
+              <p className="text-xs text-slate-500">
                 Kavramları somutlaştıran etkileşimli Maarif simülasyonları
               </p>
             </div>
@@ -130,20 +130,20 @@ export const SimulationsModal: React.FC<Props> = ({ isOpen, activeSimId = 'moon-
 
           <button
             onClick={onClose}
-            className="p-2 text-slate-400 hover:text-white rounded-xl hover:bg-slate-800 transition-colors"
+            className="p-2 text-slate-400 hover:text-slate-800 rounded-xl hover:bg-slate-100 transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Tab Selector */}
-        <div className="flex items-center gap-2 px-6 py-2.5 bg-slate-950/60 border-b border-slate-800 overflow-x-auto text-xs font-bold">
+        <div className="flex items-center gap-2 px-6 py-2.5 bg-slate-50 border-b border-slate-200 overflow-x-auto text-xs font-bold">
           <button
             onClick={() => setSelectedSim('moon-phases')}
-            className={`px-3 py-2 rounded-xl transition-all flex items-center gap-1.5 shrink-0 ${
+            className={`px-3 py-2 rounded-xl transition-all flex items-center gap-1.5 shrink-0 cursor-pointer ${
               selectedSim === 'moon-phases'
-                ? 'bg-amber-500 text-slate-950 shadow-md'
-                : 'text-slate-400 hover:text-white hover:bg-slate-800'
+                ? 'bg-emerald-600 text-white shadow-xs'
+                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200'
             }`}
           >
             <Compass className="w-4 h-4" /> 1. Ünite: Ay’ın Evreleri Çarkı
@@ -151,10 +151,10 @@ export const SimulationsModal: React.FC<Props> = ({ isOpen, activeSimId = 'moon-
 
           <button
             onClick={() => setSelectedSim('dynamometer')}
-            className={`px-3 py-2 rounded-xl transition-all flex items-center gap-1.5 shrink-0 ${
+            className={`px-3 py-2 rounded-xl transition-all flex items-center gap-1.5 shrink-0 cursor-pointer ${
               selectedSim === 'dynamometer'
-                ? 'bg-emerald-500 text-slate-950 shadow-md'
-                : 'text-slate-400 hover:text-white hover:bg-slate-800'
+                ? 'bg-emerald-600 text-white shadow-xs'
+                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200'
             }`}
           >
             <Activity className="w-4 h-4" /> 2. Ünite: Dinamometre & Yay

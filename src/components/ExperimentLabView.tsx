@@ -104,39 +104,39 @@ export const ExperimentLabView: React.FC<Props> = ({
 
   return (
     <div className="space-y-6 animate-in fade-in duration-300 pb-20">
-      {/* Station Header Banner (5 Sosyal Bilgiler Sıcak Paleti) */}
-      <div className="rounded-3xl bg-[#1b120c] border border-amber-800/60 p-6 sm:p-8 shadow-2xl flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      {/* Station Header Banner - Temel Dinî Bilgiler Teması */}
+      <div className="rounded-3xl bg-white border border-slate-200 p-6 sm:p-8 shadow-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div>
           <div className="flex flex-wrap items-center gap-2 mb-2">
-            <span className="px-3.5 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-gradient-to-r from-red-600 to-amber-600 text-white flex items-center gap-1.5 shadow-md shadow-orange-950/50 border border-amber-400/40">
-              <FlaskConical className="w-4 h-4 text-yellow-300" /> MEB MAARİF FEN LABORATUVARI
+            <span className="px-3.5 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-emerald-600 text-white flex items-center gap-1.5 shadow-xs">
+              <FlaskConical className="w-4 h-4 text-emerald-200" /> MEB MAARİF FEN LABORATUVARI
             </span>
-            <span className="px-3 py-1 rounded-full text-xs font-bold bg-[#29170e] text-amber-300 border border-amber-700/50">
-              {unit.grade}. Sınıf • {unit.unitNumber}. Ünite
+            <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
+              {unit.grade || 5}. Sınıf • {unit.unitNumber}. Ünite
             </span>
           </div>
 
-          <h1 className="text-xl sm:text-3xl font-black text-white font-fredoka mt-1">
+          <h1 className="text-xl sm:text-3xl font-extrabold text-slate-900 font-fredoka mt-1">
             {unit.title} — Deney & Etkinlik İstasyonu
           </h1>
-          <p className="text-xs sm:text-sm text-stone-300 mt-1 max-w-2xl leading-relaxed">
+          <p className="text-xs sm:text-sm text-slate-600 mt-1 max-w-2xl leading-relaxed">
             Ders kitabındaki etkinliklerin, deneylerin ve fiziksel modellerin etkileşimli dijital laboratuvar ortamı. Değişkenleri değiştirerek sonuçları gözlemleyiniz.
           </p>
         </div>
 
         <div className="flex items-center gap-3">
-          <div className="px-4 py-2 rounded-2xl bg-[#24150d] border border-amber-800/60 text-amber-300 text-xs font-bold flex items-center gap-2">
-            <Sliders className="w-4 h-4 text-orange-400" />
+          <div className="px-4 py-2 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold flex items-center gap-2">
+            <Sliders className="w-4 h-4 text-emerald-600" />
             <span>Genişletilmiş Simülasyon Alanı</span>
           </div>
         </div>
       </div>
 
       {/* SUBTOPICS SELECTOR (Alt Başlık Seçici Barı) */}
-      <div className="bg-[#170e09] p-4 rounded-3xl border border-amber-900/50 shadow-xl">
+      <div className="bg-white p-4 rounded-3xl border border-slate-200 shadow-xs">
         <div className="flex items-center gap-2 mb-3 px-1">
-          <Layers className="w-4 h-4 text-amber-400" />
-          <span className="text-xs font-black tracking-wider text-amber-300 uppercase">
+          <Layers className="w-4 h-4 text-emerald-600" />
+          <span className="text-xs font-black tracking-wider text-slate-900 uppercase">
             DENEY YAPILACAK ALT BAŞLIĞI SEÇİNİZ:
           </span>
         </div>
@@ -150,28 +150,28 @@ export const ExperimentLabView: React.FC<Props> = ({
                 onClick={() => onSelectSubTopic(sub)}
                 className={`p-3.5 rounded-2xl text-left transition-all border flex items-center justify-between gap-3 cursor-pointer ${
                   isSelected
-                    ? 'bg-gradient-to-r from-[#2e170c] via-[#231209] to-[#1a0d07] border-amber-500 text-white shadow-lg ring-1 ring-amber-400/50'
-                    : 'bg-[#1e130c] hover:bg-[#251710] border-amber-950/80 text-stone-300 hover:text-white'
+                    ? 'bg-emerald-50 border-2 border-emerald-500 text-slate-900 shadow-xs ring-1 ring-emerald-400/30'
+                    : 'bg-slate-50 hover:bg-emerald-50/50 border-slate-200 text-slate-700 hover:text-slate-900'
                 }`}
               >
                 <div className="flex items-center gap-2.5 min-w-0">
                   <span className={`w-7 h-7 rounded-xl flex items-center justify-center font-mono text-xs font-black shrink-0 ${
-                    isSelected ? 'bg-gradient-to-r from-red-600 to-amber-600 text-white shadow-sm' : 'bg-[#29170e] text-amber-300'
+                    isSelected ? 'bg-emerald-600 text-white shadow-xs' : 'bg-slate-200 text-slate-700'
                   }`}>
                     {idx + 1}
                   </span>
                   <div className="truncate">
-                    <div className="text-xs font-bold text-stone-400">
+                    <div className="text-xs font-bold text-slate-500">
                       {sub.shortTitle || `Bölüm ${idx + 1}`}
                     </div>
-                    <div className="text-sm font-extrabold text-white truncate">
+                    <div className="text-sm font-extrabold text-slate-900 truncate">
                       {sub.title.split('(')[0]}
                     </div>
                   </div>
                 </div>
 
                 {isSelected && (
-                  <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                 )}
               </button>
             );

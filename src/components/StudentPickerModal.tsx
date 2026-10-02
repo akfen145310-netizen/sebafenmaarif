@@ -63,127 +63,117 @@ export const StudentPickerModal: React.FC<Props> = ({ isOpen, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
-      <div className="relative w-full max-w-lg bg-slate-900 border border-amber-500/40 rounded-3xl shadow-2xl overflow-hidden p-6">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+      <div className="relative w-full max-w-lg bg-white border border-slate-300 rounded-3xl shadow-2xl overflow-hidden p-6 text-slate-900">
+        
         {/* Header */}
-        <div className="flex items-center justify-between pb-4 border-b border-slate-800">
+        <div className="flex items-center justify-between pb-4 border-b border-slate-200">
           <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400">
-              <Users className="w-5 h-5" />
+            <div className="w-10 h-10 rounded-2xl bg-emerald-600 flex items-center justify-center text-white shadow-sm">
+              <Users className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h3 className="font-extrabold text-lg text-white font-fredoka">
-                Rastgele Öğrenci Seçici
-              </h3>
-              <p className="text-xs text-slate-400">
-                Akıllı tahtada söz hakkı & soru çözümü için çark
+              <h2 className="text-lg font-bold text-slate-900 font-fredoka">
+                Rastgele Öğrenci Seçici (Çark)
+              </h2>
+              <p className="text-xs text-slate-500">
+                Sözlü, deney görevi veya soru yanıtlamak için öğrenci seçin
               </p>
             </div>
           </div>
+
           <button
             onClick={onClose}
-            className="p-1.5 text-slate-400 hover:text-white rounded-xl hover:bg-slate-800 transition-colors"
+            className="p-2 text-slate-400 hover:text-slate-800 rounded-xl hover:bg-slate-100 transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        {/* Selected Result Card */}
-        <div className="my-6">
-          <div className="h-36 rounded-2xl bg-gradient-to-br from-slate-800/90 to-slate-950 border border-slate-700/60 flex flex-col items-center justify-center p-4 text-center relative overflow-hidden">
-            {isSpinning && (
-              <div className="absolute inset-0 bg-amber-500/10 animate-pulse pointer-events-none" />
-            )}
-
+        {/* Selected Student Display */}
+        <div className="my-8 text-center">
+          <div className="h-32 flex items-center justify-center">
             {selectedStudent ? (
-              <div className="animate-in zoom-in-95 duration-200">
-                <div className="flex items-center justify-center gap-1.5 text-xs font-bold text-amber-400 uppercase tracking-widest mb-1">
-                  <Sparkles className="w-4 h-4 text-amber-300 animate-spin" />
-                  Sıradaki Öğrenci
+              <div className={`transition-all transform ${isSpinning ? 'scale-90 opacity-80' : 'scale-110'}`}>
+                <div className="text-xs font-black uppercase tracking-wider text-emerald-800 mb-1">
+                  {isSpinning ? 'Çark Dönüyor...' : 'Seçilen Şanslı Öğrenci:'}
                 </div>
-                <div className="text-3xl sm:text-4xl font-black text-white tracking-wide font-fredoka">
+                <div className="text-3xl sm:text-5xl font-black text-slate-900 font-fredoka bg-emerald-50 px-8 py-3 rounded-3xl border-2 border-emerald-400 shadow-sm inline-block">
                   {selectedStudent}
                 </div>
-                <p className="text-xs text-emerald-400 font-semibold mt-1">
-                  Tahtaya gelip soruyu cevaplayabilirsin! 🌟
-                </p>
               </div>
             ) : (
-              <div className="text-slate-400 text-sm flex flex-col items-center gap-1.5">
-                <Shuffle className="w-8 h-8 text-slate-600 mb-1" />
-                Öğrenci belirlemek için aşağıdaki butona basın
+              <div className="text-slate-400 text-sm font-semibold flex flex-col items-center gap-2">
+                <Sparkles className="w-8 h-8 text-emerald-500 animate-bounce" />
+                <span>Öğrenci belirlemek için aşağıdaki butona basınız</span>
               </div>
             )}
           </div>
-        </div>
 
-        {/* Action Button */}
-        <div className="flex items-center gap-3">
+          {/* Action button */}
           <button
             onClick={handlePick}
             disabled={isSpinning || students.length === 0}
-            className="flex-1 py-3.5 px-6 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 active:scale-98 text-slate-950 font-black text-base shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2 transition-all disabled:opacity-50"
+            className="w-full py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50 text-white font-black text-base shadow-sm flex items-center justify-center gap-2 transition-all transform active:scale-95 cursor-pointer disabled:cursor-not-allowed"
           >
             <Shuffle className={`w-5 h-5 ${isSpinning ? 'animate-spin' : ''}`} />
-            {isSpinning ? 'Seçiliyor...' : 'Öğrenci Seç!'}
-          </button>
-
-          <button
-            onClick={() => setShowListEdit(!showListEdit)}
-            className="px-4 py-3.5 rounded-2xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm font-semibold transition-colors flex items-center gap-1.5"
-          >
-            <Users className="w-4 h-4" />
-            <span>({students.length})</span>
+            <span>{isSpinning ? 'Öğrenci Seçiliyor...' : '🎲 Rastgele Öğrenci Seç'}</span>
           </button>
         </div>
 
-        {/* Student List Editor Drawer */}
-        {showListEdit && (
-          <div className="mt-5 pt-4 border-t border-slate-800 animate-in fade-in duration-200">
-            <div className="flex items-center justify-between mb-3">
-              <span className="text-xs font-bold text-slate-300">
-                Sınıf Listesi ({students.length} Kişi)
-              </span>
-              <button
-                onClick={resetToDefault}
-                className="text-xs text-amber-400 hover:underline"
-              >
-                Varsayılana Sıfırla
-              </button>
-            </div>
+        {/* Footer controls: Edit list */}
+        <div className="pt-4 border-t border-slate-200 flex items-center justify-between text-xs">
+          <span className="text-slate-500 font-semibold">
+            Kayıtlı: {students.length} Öğrenci
+          </span>
 
-            <form onSubmit={addStudent} className="flex gap-2 mb-3">
+          <button
+            onClick={() => setShowListEdit(!showListEdit)}
+            className="text-emerald-700 hover:text-emerald-800 font-bold cursor-pointer"
+          >
+            {showListEdit ? 'Düzenlemeyi Kapat' : 'Sınıf Listesini Düzenle'}
+          </button>
+        </div>
+
+        {/* Sınıf Listesi Düzenleme Çekmecesi */}
+        {showListEdit && (
+          <div className="mt-4 pt-4 border-t border-slate-200 space-y-3 animate-in fade-in duration-150">
+            <form onSubmit={addStudent} className="flex gap-2">
               <input
                 type="text"
                 value={newStudent}
                 onChange={e => setNewStudent(e.target.value)}
-                placeholder="Yeni öğrenci adı ekle..."
-                className="flex-1 px-3 py-2 bg-slate-950 border border-slate-700 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"
+                placeholder="Yeni öğrenci adı..."
+                className="flex-1 px-3 py-2 rounded-xl bg-slate-50 border border-slate-300 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500"
               />
               <button
                 type="submit"
-                className="px-3 py-2 bg-amber-500 text-slate-950 rounded-xl text-xs font-bold flex items-center gap-1"
+                className="px-4 py-2 rounded-xl bg-emerald-600 text-white font-bold text-xs flex items-center gap-1 cursor-pointer"
               >
-                <Plus className="w-3.5 h-3.5" /> Ekle
+                <Plus className="w-4 h-4" /> Ekle
               </button>
             </form>
 
-            <div className="max-h-36 overflow-y-auto flex flex-wrap gap-1.5 p-1 bg-slate-950/60 rounded-xl border border-slate-800">
-              {students.map((name, i) => (
-                <span
-                  key={i}
-                  className="inline-flex items-center gap-1 px-2.5 py-1 bg-slate-800 rounded-lg text-xs text-slate-300"
-                >
-                  {name}
+            <div className="max-h-40 overflow-y-auto space-y-1 p-2 bg-slate-50 rounded-xl border border-slate-200">
+              {students.map((st, i) => (
+                <div key={i} className="flex items-center justify-between text-xs py-1 px-2 hover:bg-white rounded-lg">
+                  <span className="font-semibold text-slate-700">{i + 1}. {st}</span>
                   <button
                     onClick={() => removeStudent(i)}
-                    className="text-slate-500 hover:text-rose-400 ml-0.5"
+                    className="text-rose-500 hover:text-rose-700 p-1"
                   >
-                    <Trash2 className="w-3 h-3" />
+                    <Trash2 className="w-3.5 h-3.5" />
                   </button>
-                </span>
+                </div>
               ))}
             </div>
+
+            <button
+              onClick={resetToDefault}
+              className="text-[11px] text-slate-500 hover:text-slate-700 underline"
+            >
+              Varsayılan 24 Öğrenci Listesine Sıfırla
+            </button>
           </div>
         )}
       </div>
