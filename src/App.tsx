@@ -15,6 +15,7 @@ import { SimulationsModal } from './components/SimulationsModal';
 import { GradeUnitSelectorModal } from './components/GradeUnitSelectorModal';
 import { MaarifWelcomeLandingView } from './components/MaarifWelcomeLandingView';
 import { AutomaticQuizPdfModal } from './components/AutomaticQuizPdfModal';
+import { CurriculumSidebar } from './components/CurriculumSidebar';
 
 export const App: React.FC = () => {
   const [isLandingPage, setIsLandingPage] = useState<boolean>(true);
@@ -22,6 +23,7 @@ export const App: React.FC = () => {
   const [currentUnit, setCurrentUnit] = useState<Unit>(allUnits[0]);
   const [currentSubTopic, setCurrentSubTopic] = useState<SubTopic>(allUnits[0].subTopics[0]);
   const [activeView, setActiveView] = useState<AppView>('interactive-book');
+  const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(true);
 
   // Smartboard Interactive Tool States
   const [isDrawingActive, setIsDrawingActive] = useState(false);
@@ -51,6 +53,7 @@ export const App: React.FC = () => {
 
   const handleSelectGrade = (grade: number) => {
     setCurrentGrade(grade);
+    // Seçilen sınıfa ait üniteleri bul ve ilk üniteyi aktif et
     const firstUnitForGrade = allUnits.find(u => (u.grade || 5) === grade);
     if (firstUnitForGrade) {
       setCurrentUnit(firstUnitForGrade);
@@ -89,7 +92,7 @@ export const App: React.FC = () => {
         /* DURUM 2: DERS VE AKILLI TAHTA EKRANI (Doğal sayfa kaydırması, sabit takılı kalmayan ekran) */
         <>
           <Header
-            units={allUnits}
+            units={allUnits.filter(u => (u.grade || 5) === currentGrade)}
             currentUnit={currentUnit}
             currentGrade={currentGrade}
             currentSubTopic={currentSubTopic}
@@ -108,77 +111,98 @@ export const App: React.FC = () => {
             textSize={textSize}
             onChangeTextSize={setTextSize}
             onOpenQuizPdf={() => setIsQuizPdfModalOpen(true)}
+            onToggleSidebar={() => setIsSidebarOpen(prev => !prev)}
+            isSidebarOpen={isSidebarOpen}
           />
 
-          {/* Main Container Area - Tamamen aşağı kaydırılabilir akıcı sayfa */}
-          <main className="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 py-6 sm:py-8">
-            {/* Tab 1: Etkileşimli Kitap (Sayfa Sayfa Kitap Akışı) */}
-            {activeView === 'interactive-book' && (
-              <InteractiveBookView
-                unit={currentUnit}
-                subTopic={currentSubTopic}
-                globalAnswersRevealed={globalAnswersRevealed}
-                onGoToSummary={() => setActiveView('summary')}
-                onGoToLgs={() => setActiveView('lgs')}
-                onOpenQuizPdf={() => setIsQuizPdfModalOpen(true)}
-              />
-            )}
+          {/* Temel Dinî Bilgiler Layout: Yanda Konu ve Alt Konular (Sadece seçilen sınıfa ait) + İçerik Alanı */}
+          <div className="flex-1 flex max-w-7xl w-full mx-auto items-stretch">
+            {/* Yan Menü (CurriculumSidebar) */}
+            <CurriculumSidebar
+              units={allUnits}
+              currentGrade={currentGrade}
+              currentUnit={currentUnit}
+              currentSubTopic={currentSubTopic}
+              onSelectUnit={handleSelectUnit}
+              onSelectSubTopic={(sub, unit) => {
+                setCurrentUnit(unit);
+                setCurrentSubTopic(sub);
+              }}
+              onSelectGrade={handleSelectGrade}
+              isOpen={isSidebarOpen}
+              onToggleOpen={() => setIsSidebarOpen(prev => !prev)}
+            />
 
-            {/* Tab 2: Konu Özeti & Sözlük (Maarif) */}
-            {activeView === 'summary' && (
-              <TopicSummaryView
-                unit={currentUnit}
-                subTopic={currentSubTopic}
-                globalAnswersRevealed={globalAnswersRevealed}
-                onOpenSimulation={handleOpenSimulation}
-                onStartBookActivities={() => setActiveView('interactive-book')}
-                onStartTFQuiz={() => setActiveView('true-false')}
-                onStartLGSQuiz={() => setActiveView('lgs')}
-                onOpenQuizPdf={() => setIsQuizPdfModalOpen(true)}
-              />
-            )}
+            {/* Main Content Area - Tamamen aşağı kaydırılabilir akıcı sayfa */}
+            <main className="flex-1 min-w-0 px-3 sm:px-6 py-6 sm:py-8">
+              {/* Tab 1: Etkileşimli Kitap (Sayfa Sayfa Kitap Akışı) */}
+              {activeView === 'interactive-book' && (
+                <InteractiveBookView
+                  unit={currentUnit}
+                  subTopic={currentSubTopic}
+                  globalAnswersRevealed={globalAnswersRevealed}
+                  onGoToSummary={() => setActiveView('summary')}
+                  onGoToLgs={() => setActiveView('lgs')}
+                  onOpenQuizPdf={() => setIsQuizPdfModalOpen(true)}
+                />
+              )}
 
-            {/* Tab 3: Doğru / Yanlış (10 Soru) */}
-            {activeView === 'true-false' && (
-              <TrueFalseQuiz
-                unit={currentUnit}
-                subTopic={currentSubTopic}
-                onBackToSummary={() => setActiveView('summary')}
-                onGoToLgs={() => setActiveView('lgs')}
-                onOpenQuizPdf={() => setIsQuizPdfModalOpen(true)}
-              />
-            )}
+              {/* Tab 2: Konu Özeti & Sözlük (Maarif) */}
+              {activeView === 'summary' && (
+                <TopicSummaryView
+                  unit={currentUnit}
+                  subTopic={currentSubTopic}
+                  globalAnswersRevealed={globalAnswersRevealed}
+                  onOpenSimulation={handleOpenSimulation}
+                  onStartBookActivities={() => setActiveView('interactive-book')}
+                  onStartTFQuiz={() => setActiveView('true-false')}
+                  onStartLGSQuiz={() => setActiveView('lgs')}
+                  onOpenQuizPdf={() => setIsQuizPdfModalOpen(true)}
+                />
+              )}
 
-            {/* Tab 4: LGS Mantık Muhakeme (20 Soru) */}
-            {activeView === 'lgs' && (
-              <LgsQuestionBoard
-                unit={currentUnit}
-                subTopic={currentSubTopic}
-                onBackToTF={() => setActiveView('true-false')}
-                onBackToSummary={() => setActiveView('summary')}
-                onOpenQuizPdf={() => setIsQuizPdfModalOpen(true)}
-              />
-            )}
+              {/* Tab 3: Doğru / Yanlış (10 Soru) */}
+              {activeView === 'true-false' && (
+                <TrueFalseQuiz
+                  unit={currentUnit}
+                  subTopic={currentSubTopic}
+                  onBackToSummary={() => setActiveView('summary')}
+                  onGoToLgs={() => setActiveView('lgs')}
+                  onOpenQuizPdf={() => setIsQuizPdfModalOpen(true)}
+                />
+              )}
 
-            {/* Tab 5: Deney İstasyonu (Laboratuvar - Geniş Ekran Deney ve Etkinlikler) */}
-            {activeView === 'simulation' && (
-              <ExperimentLabView
-                unit={currentUnit}
-                currentSubTopic={currentSubTopic}
-                onSelectSubTopic={sub => setCurrentSubTopic(sub)}
-              />
-            )}
+              {/* Tab 4: LGS Mantık Muhakeme (20 Soru) */}
+              {activeView === 'lgs' && (
+                <LgsQuestionBoard
+                  unit={currentUnit}
+                  subTopic={currentSubTopic}
+                  onBackToTF={() => setActiveView('true-false')}
+                  onBackToSummary={() => setActiveView('summary')}
+                  onOpenQuizPdf={() => setIsQuizPdfModalOpen(true)}
+                />
+              )}
 
-            {/* Tab 6: Ünite Sonu Sınavı (20 Soru) */}
-            {activeView === 'unit-end-20' && (
-              <UnitEnd20ExamView
-                unit={currentUnit}
-                globalAnswersRevealed={globalAnswersRevealed}
-                onGoToSummary={() => setActiveView('summary')}
-                onOpenQuizPdf={() => setIsQuizPdfModalOpen(true)}
-              />
-            )}
-          </main>
+              {/* Tab 5: Deney İstasyonu (Laboratuvar - Geniş Ekran Deney ve Etkinlikler) */}
+              {activeView === 'simulation' && (
+                <ExperimentLabView
+                  unit={currentUnit}
+                  currentSubTopic={currentSubTopic}
+                  onSelectSubTopic={sub => setCurrentSubTopic(sub)}
+                />
+              )}
+
+              {/* Tab 6: Ünite Sonu Sınavı (20 Soru) */}
+              {activeView === 'unit-end-20' && (
+                <UnitEnd20ExamView
+                  unit={currentUnit}
+                  globalAnswersRevealed={globalAnswersRevealed}
+                  onGoToSummary={() => setActiveView('summary')}
+                  onOpenQuizPdf={() => setIsQuizPdfModalOpen(true)}
+                />
+              )}
+            </main>
+          </div>
         </>
       )}
 

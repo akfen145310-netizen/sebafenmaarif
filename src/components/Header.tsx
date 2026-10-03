@@ -19,7 +19,8 @@ import {
   Award,
   Printer,
   Compass,
-  Search
+  Search,
+  PanelLeft
 } from 'lucide-react';
 
 export type AppView = 
@@ -50,6 +51,8 @@ interface Props {
   textSize: 'normal' | 'large' | 'huge';
   onChangeTextSize: (size: 'normal' | 'large' | 'huge') => void;
   onOpenQuizPdf?: () => void;
+  onToggleSidebar?: () => void;
+  isSidebarOpen?: boolean;
 }
 
 export const Header: React.FC<Props> = ({
@@ -71,7 +74,9 @@ export const Header: React.FC<Props> = ({
   onToggleGlobalAnswers,
   textSize,
   onChangeTextSize,
-  onOpenQuizPdf
+  onOpenQuizPdf,
+  onToggleSidebar,
+  isSidebarOpen
 }) => {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [unitDropdownOpen, setUnitDropdownOpen] = useState(false);
@@ -122,6 +127,21 @@ export const Header: React.FC<Props> = ({
           
           {/* Left Brand & Grade Info */}
           <div className="flex items-center gap-3">
+            {onToggleSidebar && (
+              <button
+                onClick={onToggleSidebar}
+                className={`p-2 rounded-xl border text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer ${
+                  isSidebarOpen
+                    ? 'bg-emerald-50 text-emerald-800 border-emerald-300'
+                    : 'bg-white hover:bg-slate-50 text-slate-700 border-slate-200'
+                }`}
+                title={isSidebarOpen ? 'Yan Menüyü Kapat' : 'Yan Menüyü Aç'}
+              >
+                <PanelLeft className="w-4 h-4 text-emerald-600" />
+                <span className="hidden lg:inline">{isSidebarOpen ? 'Menü' : 'Konular'}</span>
+              </button>
+            )}
+
             {/* Din Keşif Atölyesi tarzı Emerald Logo */}
             <div className="w-10 h-10 rounded-2xl bg-emerald-600 text-white flex items-center justify-center font-black shadow-md shadow-emerald-700/20 shrink-0">
               <BookOpen className="w-5 h-5 text-white" />
@@ -219,36 +239,41 @@ export const Header: React.FC<Props> = ({
 
               {unitDropdownOpen && (
                 <div className="absolute left-0 top-full mt-2 w-80 sm:w-96 max-h-96 overflow-y-auto bg-white border border-slate-300 rounded-2xl shadow-xl p-2 z-50 animate-in fade-in zoom-in-95 duration-150">
-                  <div className="text-[11px] font-bold text-slate-500 px-3 py-1.5 border-b border-slate-100">
-                    {currentGrade}. Sınıf Fen Bilimleri Üniteleri:
+                  <div className="text-[11px] font-bold text-slate-500 px-3 py-1.5 border-b border-slate-100 flex items-center justify-between">
+                    <span>{currentGrade}. Sınıf Fen Bilimleri Üniteleri:</span>
+                    <span className="text-[10px] text-emerald-700 font-mono font-bold">
+                      {units.filter(u => (u.grade || 5) === currentGrade).length} Ünite
+                    </span>
                   </div>
                   <div className="flex flex-col gap-1 pt-1.5">
-                    {units.map(u => {
-                      const isCurrent = u.id === currentUnit.id;
-                      return (
-                        <button
-                          key={u.id}
-                          onClick={() => {
-                            onSelectUnit(u);
-                            setUnitDropdownOpen(false);
-                          }}
-                          className={`w-full p-2.5 rounded-xl text-left transition-all flex items-center justify-between cursor-pointer ${
-                            isCurrent
-                              ? 'bg-emerald-600 text-white font-black shadow-sm'
-                              : 'hover:bg-emerald-50 text-slate-700 hover:text-emerald-900'
-                          }`}
-                        >
-                          <div className="text-xs font-bold leading-tight">
-                            <span className="font-mono">{u.unitNumber}. Ünite:</span> {u.title}
-                          </div>
-                          <span className={`text-[10px] px-2 py-0.5 rounded-md font-mono shrink-0 ml-2 ${
-                            isCurrent ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-600'
-                          }`}>
-                            {u.subTopics.length} Bölüm
-                          </span>
-                        </button>
-                      );
-                    })}
+                    {units
+                      .filter(u => (u.grade || 5) === currentGrade)
+                      .map(u => {
+                        const isCurrent = u.id === currentUnit.id;
+                        return (
+                          <button
+                            key={u.id}
+                            onClick={() => {
+                              onSelectUnit(u);
+                              setUnitDropdownOpen(false);
+                            }}
+                            className={`w-full p-2.5 rounded-xl text-left transition-all flex items-center justify-between cursor-pointer ${
+                              isCurrent
+                                ? 'bg-emerald-600 text-white font-black shadow-sm'
+                                : 'hover:bg-emerald-50 text-slate-700 hover:text-emerald-900'
+                            }`}
+                          >
+                            <div className="text-xs font-bold leading-tight">
+                              <span className="font-mono">{u.unitNumber}. Ünite:</span> {u.title}
+                            </div>
+                            <span className={`text-[10px] px-2 py-0.5 rounded-md font-mono shrink-0 ml-2 ${
+                              isCurrent ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-600'
+                            }`}>
+                              {u.subTopics.length} Bölüm
+                            </span>
+                          </button>
+                        );
+                      })}
                   </div>
                 </div>
               )}
