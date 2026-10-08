@@ -248,7 +248,7 @@ export const CurriculumSidebar: React.FC<Props> = ({
                       {unit.unitNumber}. ÜNİTE: {unit.title}
                     </div>
                     <div className="text-[10px] text-slate-500 flex items-center gap-1 mt-0.5">
-                      <span>{unit.bookNumber ? `${unit.bookNumber}. Kitap • ` : ''}</span>
+                      <span>{unit.grade !== 8 && unit.bookNumber ? `${unit.bookNumber}. Kitap • ` : ''}</span>
                       <span>{unit.subTopics.length} Alt Konu</span>
                     </div>
                   </div>

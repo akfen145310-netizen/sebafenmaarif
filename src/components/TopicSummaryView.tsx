@@ -36,6 +36,12 @@ export const TopicSummaryView: React.FC<Props> = ({
 }) => {
   const [revealedQuestions, setRevealedQuestions] = useState<Record<string, boolean>>({});
 
+  const isSystemsUnit =
+    unit.grade === 8 ||
+    unit.id === 'g7-unit-3' ||
+    unit.id === 'g6-unit-3' ||
+    (unit.title && unit.title.toLowerCase().includes('sistem'));
+
   const toggleQuestionReveal = (id: string) => {
     setRevealedQuestions(prev => ({
       ...prev,
@@ -57,12 +63,19 @@ export const TopicSummaryView: React.FC<Props> = ({
             <span className="px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-emerald-600 text-white shadow-xs">
               {unit.unitNumber}. Ünite • {subTopic.shortTitle}
             </span>
-            <span className="px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-700 border border-slate-200">
-              Ders Kitabı Sayfa: {subTopic.pageRange}
-            </span>
+            {subTopic.pageRange && (
+              <span className="px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-700 border border-slate-200">
+                Ders Kitabı Sayfa: {subTopic.pageRange}
+              </span>
+            )}
             <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
-              Türkiye Yüzyılı Maarif Modeli
+              {unit.grade === 8 ? 'LGS Fen Bilimleri' : 'Türkiye Yüzyılı Maarif Modeli'}
             </span>
+            {isSystemsUnit && (
+              <span className="px-3 py-1 rounded-full text-xs font-extrabold bg-amber-50 text-amber-800 border border-amber-300">
+                ★ Doğru/Yanlış & LGS Muhakeme Soru Havuzu Aktif
+              </span>
+            )}
           </div>
 
           <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 font-fredoka mt-2">
@@ -83,13 +96,15 @@ export const TopicSummaryView: React.FC<Props> = ({
 
           {/* Quick Action Navigation Buttons */}
           <div className="flex flex-wrap gap-2.5 mt-5 pt-4 border-t border-slate-100">
-            <button
-              onClick={onStartBookActivities}
-              className="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm flex items-center gap-2 shadow-xs transition-all cursor-pointer"
-            >
-              <Layers className="w-4 h-4 text-emerald-200" />
-              Kitap Etkinlikleri & Çözümleri ({subTopic.bookActivities?.length || 0})
-            </button>
+            {!isSystemsUnit && (
+              <button
+                onClick={onStartBookActivities}
+                className="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm flex items-center gap-2 shadow-xs transition-all cursor-pointer"
+              >
+                <Layers className="w-4 h-4 text-emerald-200" />
+                Kitap Etkinlikleri & Çözümleri ({subTopic.bookActivities?.length || 0})
+              </button>
+            )}
 
             {onOpenQuizPdf && (
               <button
@@ -116,7 +131,7 @@ export const TopicSummaryView: React.FC<Props> = ({
               className="px-4 py-2.5 rounded-xl bg-white hover:bg-emerald-50 text-slate-700 hover:text-emerald-800 border border-slate-200 font-bold text-xs sm:text-sm flex items-center gap-2 transition-all cursor-pointer shadow-xs"
             >
               <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-              Doğru / Yanlış (10 Soru)
+              Doğru / Yanlış & Soru Havuzu ({subTopic.trueFalseQuestions?.length || 0})
             </button>
 
             <button
@@ -124,7 +139,7 @@ export const TopicSummaryView: React.FC<Props> = ({
               className="px-4 py-2.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 font-bold text-xs sm:text-sm flex items-center gap-2 transition-all cursor-pointer"
             >
               <Sparkles className="w-4 h-4 text-amber-500" />
-              LGS Mantık Muhakeme (20 Soru)
+              {isSystemsUnit ? 'LGS Genel Bakış Muhakeme & Soru Havuzu' : 'LGS Mantıksal Muhakeme & Soru Havuzu'} ({subTopic.lgsQuestions?.length || 0})
             </button>
           </div>
         </div>
@@ -232,8 +247,8 @@ export const TopicSummaryView: React.FC<Props> = ({
         ))}
       </div>
 
-      {/* Embedded Sınav Bilgi Notu & Öğrenilmesi Gereken Sorular Bölümü */}
-      {subTopic.bookActivities && subTopic.bookActivities.length > 0 && (
+      {/* Embedded Sınav Bilgi Notu & Öğrenilmesi Gereken Sorular Bölümü (5, 6, 7. Sınıflar İçin - Sistemler Hariç) */}
+      {!isSystemsUnit && subTopic.bookActivities && subTopic.bookActivities.length > 0 && (
         <div className="rounded-3xl bg-white border border-slate-200 p-6 sm:p-8 space-y-6 shadow-xs">
           <div className="flex items-center justify-between pb-3 border-b border-slate-200">
             <div className="flex items-center gap-2.5">

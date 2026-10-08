@@ -116,7 +116,7 @@ export interface SubTopic {
   title: string;
   shortTitle: string;
   badge: string;
-  pageRange: string;
+  pageRange?: string;
   concepts: string[];
   summarySections: {
     heading: string;

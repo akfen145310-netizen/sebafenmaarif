@@ -1,4 +1,5 @@
 import { Unit } from '../../types/curriculum';
+import { odsgmGrade6Unit1Questions } from './odsgmQuestions';
 
 export const grade6Unit1Data: Unit = {
   id: 'g6-unit-1',
@@ -135,6 +136,7 @@ export const grade6Unit1Data: Unit = {
         { id: 10, text: 'Neptün Güneş sisteminde Güneş’e en yakın gezegendir.', isCorrect: false, explanation: 'Yanlıştır. Neptün Güneş’e en uzak 8. gezegendir.' }
       ],
       lgsQuestions: [
+        ...odsgmGrade6Unit1Questions.filter(q => q.subTopicId === 'g6-u1-sub1'),
         {
           id: 1,
           questionPrompt: 'Fen bilimleri öğretmeni sınıfa getirdiği toplarla gezegenleri modellemek istiyor. Pinpon topu, tenis topu, futbol topu ve basketbol topunu karasal gezegenlerin hacimsel büyüklüklerine göre eşleştirmek isteyen öğrenci hangi sıralamayı yapmalıdır?',
@@ -240,6 +242,7 @@ export const grade6Unit1Data: Unit = {
         { id: 15, text: 'Ay tutulması Dünya’nın gölgesinin büyük olması sebebiyle saatlerce sürebilir.', isCorrect: true, explanation: 'Doğrudur. Ay tutulması geniş alanda ve uzun sürer.' }
       ],
       lgsQuestions: [
+        ...odsgmGrade6Unit1Questions.filter(q => q.subTopicId === 'g6-u1-sub2'),
         {
           id: 3,
           questionPrompt: 'Bir araştırmacı Güneş, Dünya ve Ay’ı temsil eden toplarla deney yapıyor. Fenerin önüne önce küçük tenis topunu, arkasına büyük voleybol topunu koyduğunda voleybol topunun üzerinde küçük karanlık bir gölge lekesi oluştuğunu gözlemliyor.\n\nBu durumla ilgili;\nI. Güneş tutulması modellenmiştir.\nII. Tenis topu Ay’ı, voleybol topu Dünya’yı temsil eder.\nIII. Bu olay Ay dolunay evresindeyken gerçekleşir.\n\nyargılarından hangileri doğrudur?',

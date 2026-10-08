@@ -198,9 +198,15 @@ export const ExperimentLabView: React.FC<Props> = ({
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="text-xs px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 border border-slate-700">
-              Ders Kitabı Sayfa: {currentSubTopic.pageRange}
-            </span>
+            {currentSubTopic.pageRange ? (
+              <span className="text-xs px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 border border-slate-700">
+                Ders Kitabı Sayfa: {currentSubTopic.pageRange}
+              </span>
+            ) : (
+              <span className="text-xs px-3 py-1.5 rounded-xl bg-indigo-950 text-indigo-300 border border-indigo-700">
+                LGS Deney İstasyonu
+              </span>
+            )}
           </div>
         </div>
 

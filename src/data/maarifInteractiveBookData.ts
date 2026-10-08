@@ -684,7 +684,7 @@ export const allInteractiveBookFlows: Record<string, InteractiveBookItem[]> = {
  */
 export function generateComprehensiveMaarifFlow(unit: Unit, subTopic: SubTopic): InteractiveBookItem[] {
   // Parse page range e.g. "53 - 63" or "18-28"
-  const rangeMatch = subTopic.pageRange.match(/(\d+)\s*[-–]\s*(\d+)/);
+  const rangeMatch = (subTopic.pageRange || '').match(/(\d+)\s*[-–]\s*(\d+)/);
   const startPage = rangeMatch ? parseInt(rangeMatch[1], 10) : 20;
   const endPage = rangeMatch ? parseInt(rangeMatch[2], 10) : startPage + 10;
   const midPage1 = Math.round(startPage + (endPage - startPage) * 0.25);

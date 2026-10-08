@@ -7,7 +7,569 @@ export const grade7Unit3Data: Unit = {
   grade: 7,
   subject: 'Fen Bilimleri',
   title: 'Vücudumuzdaki Sistemler',
-  unitEndPageRange: 's. 141-148',
+    unitEndPageRange: 's. 141-148',
+  unitEnd20Questions: [
+    {
+        "id": 7301,
+        "theme": "Sindirim Organları ve Villus",
+        "cognitiveLevel": "Görsel Analiz & Biyolojik Model",
+        "contextTitle": "İnce Bağırsak ve Banyo Havlusu Benzetmesi",
+        "scenario": "Bir tekstil mühendisi, banyo sonrasında suyu çok daha hızlı emen yüksek kapasiteli bir havlu tasarlamak için düz kumaş yerine yüzeyinde binlerce küçük iplik çıkıntısı (bukle) olan bir yapı geliştirmiştir. Fen bilimleri öğretmeni, bu havlu tasarımının insan vücudundaki ince bağırsağın iç yüzeyindeki mikroskobik villus uzantılarıyla aynı prensipte çalıştığını belirtmiştir.",
+        "questionPrompt": "İnce bağırsağın iç yüzeyinde milyonlarca villus bulunmasının sindirim sistemine sağladığı temel avantaj aşağıdakilerden hangisidir?",
+        "options": [
+            {
+                "key": "A",
+                "text": "Besinlerin emilim yüzey alanını yüzlerce kat genişleterek besin yapı taşlarının kana geçişini hızlandırmak"
+            },
+            {
+                "key": "B",
+                "text": "Besinlerin mideye geri kaçmasını önleyen mekanik bir kapak görevi üstlenmek"
+            },
+            {
+                "key": "C",
+                "text": "Mide asidini tamamen nötrleyerek bağırsak kaslarının kasılmasını durdurmak"
+            },
+            {
+                "key": "D",
+                "text": "Besinlerin kalın bağırsağa geçiş süresini geciktirerek su kaybını engellemek"
+            }
+        ],
+        "correctAnswer": "A",
+        "explanation": "Villuslar ince bağırsağın iç yüzey alanını yaklaşık 250-300 m² büyüklüğüne ulaştırarak sindirilen besinlerin kana emilimini son derece hızlı ve verimli kılar."
+    },
+    {
+        "id": 7302,
+        "theme": "Enzim ve Sıcaklık İlişkisi",
+        "cognitiveLevel": "Deney ve Değişken Analizi",
+        "contextTitle": "Protein Sindiriminde Sıcaklık Etkisi",
+        "scenario": "Bir araştırmacı protein sindirimini incelemek amacıyla iki deney tüpü hazırlıyor:\n1. Tüp: 30 g bütün protein + 10 g pankreas öz suyu + su (Oda sıcaklığında - 25 °C)\n2. Tüp: 30 g bütün protein + 10 g pankreas öz suyu + su (Buzdolabında - 4 °C)\nDeney sonunda 1. tüpte proteinlerin hızla sindirildiği, 2. tüpte ise sindirimin gerçekleşmediği belirleniyor.",
+        "questionPrompt": "Bu deneyin sonuçlarına göre araştırmacının ulaştığı bilimsel sonuç aşağıdakilerden hangisidir?",
+        "options": [
+            {
+                "key": "A",
+                "text": "Proteinler yalnızca ağızda bulunan enzimlerle kimyasal sindirime uğrayabilir."
+            },
+            {
+                "key": "B",
+                "text": "Ortam sıcaklığı sindirim enzimlerinin çalışma hızını doğrudan etkiler."
+            },
+            {
+                "key": "C",
+                "text": "Buzdolabı ortamında fiziksel sindirim hızlanırken kimyasal sindirim durur."
+            },
+            {
+                "key": "D",
+                "text": "Pankreas öz suyu sadece düşük sıcaklıklarda proteinleri parçalayabilir."
+            }
+        ],
+        "correctAnswer": "B",
+        "explanation": "Enzimler belirli sıcaklık aralıklarında optimum çalışır; düşük sıcaklıkta (4 °C) enzimlerin aktivitesi durur veya çok yavaşlar, oda sıcaklığında ise aktif olarak sindirimi gerçekleştirir."
+    },
+    {
+        "id": 7303,
+        "theme": "Sindirime Yardımcı Organlar",
+        "cognitiveLevel": "Kavramsal Çıkarım",
+        "contextTitle": "Karaciğer ve Pankreas Salgılarının Rolü",
+        "scenario": "Karaciğer safra sıvısını üreterek safra kesesinde depolar ve bir kanal yardımıyla ince bağırsağa yollar. Pankreas ise pankreas öz suyunu üreterek aynı şekilde bir kanalla ince bağırsağa ulaştırır. Yağlı bir yemek yiyen bireyde safra kanalı tıkandığında yağların sindiriminin ciddi şekilde aksadığı gözlemlenmiştir.",
+        "questionPrompt": "Safra kanalının tıkanması sonucunda yağ sindiriminin aksamasının temel nedeni aşağıdakilerden hangisidir?",
+        "options": [
+            {
+                "key": "A",
+                "text": "Pankreasın enzim üretmeyi tamamen durdurması"
+            },
+            {
+                "key": "B",
+                "text": "Midede protein sindiriminin gerçekleşememesi"
+            },
+            {
+                "key": "C",
+                "text": "Yağların fiziksel olarak küçük damlacıklara ayrılamaması nedeniyle pankreas enzimlerinin etki yüzeyinin yetersiz kalması"
+            },
+            {
+                "key": "D",
+                "text": "Safra sıvısındaki kimyasal sindirim enzimlerinin ince bağırsağa ulaşamaması"
+            }
+        ],
+        "correctAnswer": "C",
+        "explanation": "Safra sıvısı enzim içermez; yağları mekanik olarak küçük damlacıklara böler. Safra gelmediğinde yağların yüzey alanı küçük kalır ve pankreas lipaz enzimi yeterince hızlı etki edemez."
+    },
+    {
+        "id": 7304,
+        "theme": "Sindirim Sistemi Sağlığı",
+        "cognitiveLevel": "Sağlık ve Biyolojik Çıkarım",
+        "contextTitle": "Çölyak Hastalığı ve Emilim Bozukluğu",
+        "scenario": "Çölyak hastalığı, buğday ve arpada bulunan gluten proteinine karşı bağışıklık sisteminin aşırı tepki vermesiyle ortaya çıkar. Bu tepki sonucunda ince bağırsak iç yüzeyindeki parmaksı villuslar zamanla silinip düzleşir.",
+        "questionPrompt": "Villusları düzleşen bir çölyak hastasında aşağıdaki durumlardan hangisinin görülmesi beklenir?",
+        "options": [
+            {
+                "key": "A",
+                "text": "Ağızda tükürük salgısının durması ve dişlerin çürümesi"
+            },
+            {
+                "key": "B",
+                "text": "Midede asit salgılanmasının tamamen sona ermesi"
+            },
+            {
+                "key": "C",
+                "text": "Kalın bağırsakta kimyasal sindirimin hızlanması"
+            },
+            {
+                "key": "D",
+                "text": "Besin maddelerinin kana yeterince emilememesi sonucu beslenme yetersizliği ve kilo kaybı yaşanması"
+            }
+        ],
+        "correctAnswer": "D",
+        "explanation": "Villusların yıpranıp düzleşmesi besin emilim yüzeyini yok eder; bu durum besin yapı taşlarının kana geçmesini engelleyerek kilo kaybına ve gelişim geriliğine yol açar."
+    },
+    {
+        "id": 7305,
+        "theme": "Dolaşım Sistemi Modeli",
+        "cognitiveLevel": "Model Oluşturma & Analoji",
+        "contextTitle": "Kombi ve Kalorifer Tesisatı Benzetmesi",
+        "scenario": "Bir öğrenci dolaşım sistemini evdeki ısıtma tesisatına benzetmiştir: Kombide ısınan su kırmızı borularla kalorifer peteklerine pompalanır, peteklerde ısısını odaya veren soğuyan su mavi borularla tekrar kombiye döner.",
+        "questionPrompt": "Bu modelde kombi, kırmızı borular ve mavi borular sırasıyla hangi dolaşım elemanlarına karşılık gelir?",
+        "options": [
+            {
+                "key": "A",
+                "text": "Kalp - Atardamar - Toplardamar"
+            },
+            {
+                "key": "B",
+                "text": "Kalp - Toplardamar - Atardamar"
+            },
+            {
+                "key": "C",
+                "text": "Akciğer - Kılcal damar - Toplardamar"
+            },
+            {
+                "key": "D",
+                "text": "Böbrek - Atardamar - Kılcal damar"
+            }
+        ],
+        "correctAnswer": "A",
+        "explanation": "Pompalayan merkez (kombi) kalp, kanı organlara dağıtan (kırmızı boru) atardamar, kanı merkeze geri toplayan (mavi boru) toplardamardır."
+    },
+    {
+        "id": 7306,
+        "theme": "Büyük ve Küçük Kan Dolaşımı",
+        "cognitiveLevel": "Sistem Analizi",
+        "contextTitle": "Dolaşım Yollarında Gaz Değişimi",
+        "scenario": "İnsan vücudunda gerçekleşen dolaşım yollarında:\n• Küçük Dolaşım: Kalbin sağ karıncığından çıkan kan akciğerlere gider ve temizlenerek kalbin sol kulakçığına döner.\n• Büyük Dolaşım: Kalbin sol karıncığından çıkan kan vücut dokularına gider ve kirlenerek kalbin sağ kulakçığına döner.",
+        "questionPrompt": "Buna göre aşağıdaki damarlardan hangisinde oksijen oranı yüksek, karbondioksit oranı düşük kan bulunur?",
+        "options": [
+            {
+                "key": "A",
+                "text": "Akciğer atardamarı"
+            },
+            {
+                "key": "B",
+                "text": "Akciğer toplardamarı"
+            },
+            {
+                "key": "C",
+                "text": "Karaciğer toplardamarı"
+            },
+            {
+                "key": "D",
+                "text": "Böbrek toplardamarı"
+            }
+        ],
+        "correctAnswer": "B",
+        "explanation": "Akciğer toplardamarı akciğerde oksijenle zenginleşen temiz kanı kalbin sol tarafına taşıdığı için oksijen oranı yüksektir."
+    },
+    {
+        "id": 7307,
+        "theme": "Kanın Yapısı ve Hücreleri",
+        "cognitiveLevel": "Veri Analizi",
+        "contextTitle": "Santrifüj Edilmiş Kan Tüpü Katmanları",
+        "scenario": "Bir laboratuvarda bir tüp kan santrifüj cihazına konularak yüksek devirde döndürülmüştür. Döndürme sonucunda kan iki ana katmana ayrılmıştır:\n• 1. Katman (%55): Üstte kalan sarı renkli sıvı katman.\n• 2. Katman (%45): Altta çöken hücresel katman.",
+        "questionPrompt": "Bu katmanların içeriği ve görevleri ile ilgili aşağıdaki ifadelerden hangisi doğrudur?",
+        "options": [
+            {
+                "key": "A",
+                "text": "1. katman tamamen alyuvarlardan oluşur ve oksijen taşır."
+            },
+            {
+                "key": "B",
+                "text": "2. katmanda su, hormonlar ve çözünmüş besin maddeleri yer alır."
+            },
+            {
+                "key": "C",
+                "text": "1. katman kan plazması olup su ve besin taşırken, 2. katman alyuvar, akyuvar ve kan pulcuklarını içerir."
+            },
+            {
+                "key": "D",
+                "text": "Her iki katmanda da eşit sayıda mikrop öldürücü akyuvar hücresi bulunur."
+            }
+        ],
+        "correctAnswer": "C",
+        "explanation": "Kanın %55’i plazma sıvısı (su, besin, atık, hormon), %45’i ise kan hücreleridir (alyuvar, akyuvar, kan pulcukları)."
+    },
+    {
+        "id": 7308,
+        "theme": "Kan Hücreleri ve Adaptasyon",
+        "cognitiveLevel": "Grafik Yorumlama",
+        "contextTitle": "Yüksek Rakımda Alyuvar Sayısının Artışı",
+        "scenario": "Deniz seviyesinden 2500 metre yükseklikteki bir dağ kampına çıkan sağlıklı bir sporcunun kan tahlilleri incelendiğinde, kandaki alyuvar sayısının zamanla belirgin biçimde arttığı kaydedilmiştir.",
+        "questionPrompt": "Yüksek rakımda sporcunun vücudunda alyuvar sayısının artmasının fizyolojik gerekçesi nedir?",
+        "options": [
+            {
+                "key": "A",
+                "text": "Havadaki toz miktarının artması sonucu mikroplarla savaşma ihtiyacı"
+            },
+            {
+                "key": "B",
+                "text": "Yükseklerde azalan açık hava basıncı nedeniyle kanın pıhtılaşmasını sağlamak"
+            },
+            {
+                "key": "C",
+                "text": "Vücudun su kaybını önleyerek terlemeyi durdurmak"
+            },
+            {
+                "key": "D",
+                "text": "Yükseklerde azalan oksijen miktarını telafi ederek doku ve organlara yeterli oksijen taşıyabilmek"
+            }
+        ],
+        "correctAnswer": "D",
+        "explanation": "Yüksek rakımlarda oksijen basıncı düşüktür; vücut dokulara yeterli oksijen ulaştırabilmek için kemik iliğinde daha fazla alyuvar üretir."
+    },
+    {
+        "id": 7309,
+        "theme": "Toplumsal Dayanışma ve Sağlık",
+        "cognitiveLevel": "Kavramsal Çıkarım",
+        "contextTitle": "Kan Bağışı ve Organ Nakli Şartları",
+        "scenario": "Kızılay kan bağışı kampanyasında görevli doktor, bağışçılara kanın fabrikalarda üretilemediğini, tek kaynağının sağlıklı insanlar olduğunu anlatmıştır. Ayrıca organ naklinde doku ve kan grubu uyumunun şart olduğu vurgulanmıştır.",
+        "questionPrompt": "Kan bağışı ve organ nakli ile ilgili aşağıdaki değerlendirmelerden hangisi doğrudur?",
+        "options": [
+            {
+                "key": "A",
+                "text": "18-65 yaş arasındaki sağlıklı ve 50 kg üzerindeki bireyler kan bağışında bulunabilir."
+            },
+            {
+                "key": "B",
+                "text": "Kan bağışı yapan bir bireyin vücudundaki kan miktarı kalıcı olarak eksik kalır."
+            },
+            {
+                "key": "C",
+                "text": "Organ naklinde kan grubu uyumu aranmaz, sadece yaş uyumu yeterlidir."
+            },
+            {
+                "key": "D",
+                "text": "Organ bağışı sadece canlı vericiler arasında yapılabilir, beyin ölümü gerçekleşmiş kişilerden nakil yapılamaz."
+            }
+        ],
+        "correctAnswer": "A",
+        "explanation": "Kan bağışı için yasal ve tıbbi kriter 18-65 yaş arası, en az 50 kg ve bulaşıcı hastalığı olmayan sağlıklı bireylerdir."
+    },
+    {
+        "id": 7310,
+        "theme": "Dolaşım Sistemi Sağlığı",
+        "cognitiveLevel": "Grafik Analizi",
+        "contextTitle": "Egzersiz Sırasında Nabız Değişimi",
+        "scenario": "Bir öğrenci dinlenme halindeyken dakikadaki nabız sayısını 72 olarak ölçüyor. Ardından 10 dakika tempolu koştuktan sonra nabzının dakikada 130’a çıktığını tespit ediyor.",
+        "questionPrompt": "Egzersiz sırasında nabzın artmasının vücut mekanizması açısından temel nedeni nedir?",
+        "options": [
+            {
+                "key": "A",
+                "text": "Kalp kaslarının yorularak gevşemesi"
+            },
+            {
+                "key": "B",
+                "text": "Çalışan kasların artan oksijen ve besin ihtiyacını karşılamak için kalbin daha hızlı kan pompalaması"
+            },
+            {
+                "key": "C",
+                "text": "Kandaki alyuvar sayısının aniden yarıya düşmesi"
+            },
+            {
+                "key": "D",
+                "text": "Vücut sıcaklığının aşırı düşmesini engellemek için dolaşımın durması"
+            }
+        ],
+        "correctAnswer": "B",
+        "explanation": "Egzersiz sırasında kasların enerji ve oksijen tüketimi katlanır; kalp daha hızlı kasılıp gevşeyerek dokulara gereken kanı ulaştırır ve nabız artar."
+    },
+    {
+        "id": 7311,
+        "theme": "Solunum Sistemi Modeli",
+        "cognitiveLevel": "Deney Düzeneği Analizi",
+        "contextTitle": "Pet Şişe ve Balonlu Akciğer Modeli",
+        "scenario": "Bir öğrenci altı kesilmiş plastik şişenin içine Y şeklinde bir boru ve ucuna iki küçük balon yerleştirmiştir. Şişenin tabanına ise esnek bir balon zar gerdirmiştir. Esnek zar aşağı doğru çekildiğinde içerideki balonların şiştiği gözlemlenmiştir.",
+        "questionPrompt": "Bu modeldeki esnek zar ve içerideki balonlar insan vücudunda sırasıyla hangi yapıları temsil eder?",
+        "options": [
+            {
+                "key": "A",
+                "text": "Kaburgalar - Yutak"
+            },
+            {
+                "key": "B",
+                "text": "Soluk borusu - Bronşçuklar"
+            },
+            {
+                "key": "C",
+                "text": "Diyafram kası - Akciğerler"
+            },
+            {
+                "key": "D",
+                "text": "Gırtlak - Alveoller"
+            }
+        ],
+        "correctAnswer": "C",
+        "explanation": "Tabandaki esnek zar diyafram kasını, Y borusunun ucundaki iki balon ise sağ ve sol akciğerleri temsil eder. Zar çekildiğinde iç basınç düşer ve akciğerler şişer (soluk alma)."
+    },
+    {
+        "id": 7312,
+        "theme": "Soluk Alıp Verme Mekanizması",
+        "cognitiveLevel": "Karşılaştırmalı Analiz",
+        "contextTitle": "Soluk Verme Sırasında Meydana Gelen Değişimler",
+        "scenario": "Soluk alma ve soluk verme art arda gerçekleşen döngüsel mekanizmalardır. Soluk verme anında vücuttaki kaslarda ve göğüs kafesinde belirli fiziksel değişimler gerçekleşir.",
+        "questionPrompt": "Buna göre soluk verme sırasında aşağıdaki olaylardan hangisi gerçekleşir?",
+        "options": [
+            {
+                "key": "A",
+                "text": "Diyafram kası kasılarak düzleşir."
+            },
+            {
+                "key": "B",
+                "text": "Kaburgalar arası kaslar kasılarak göğüs kafesi genişler."
+            },
+            {
+                "key": "C",
+                "text": "Akciğerlerin hacmi büyür ve iç basınç düşer."
+            },
+            {
+                "key": "D",
+                "text": "Diyafram kası gevşeyerek kubbeleşir ve göğüs boşluğunun hacmi daralır."
+            }
+        ],
+        "correctAnswer": "D",
+        "explanation": "Soluk verme anında diyafram gevşer (kubbeleşir), kaburgalar arası kaslar gevşer, göğüs kafesi daralır ve akciğerlerdeki hava dışarı itilir."
+    },
+    {
+        "id": 7313,
+        "theme": "Solunum Gazları Analizi",
+        "cognitiveLevel": "Tablo Yorumlama",
+        "contextTitle": "Solunan Hava ile Verilen Havadaki Gaz Oranları",
+        "scenario": "Sağlıklı bir insanın soluduğu atmosfer havası ile vücuttan dışarı verdiği nefesteki gazların yaklaşık oranları ölçülerek tabloya kaydedilmiştir:\n• Oksijen: Alınan havada %21, Verilen havada %16\n• Karbondioksit: Alınan havada %0,04, Verilen havada %4,4\n• Azot: Alınan havada %78, Verilen havada %78",
+        "questionPrompt": "Bu tablodaki verilerden yararlanılarak aşağıdaki çıkarımlardan hangisine ulaşılabilir?",
+        "options": [
+            {
+                "key": "A",
+                "text": "Solunan havadaki oksijenin bir kısmı alveollerden kana geçmiş, kandaki karbondioksit ise havaya aktarılmıştır."
+            },
+            {
+                "key": "B",
+                "text": "Azot gazı hücrelerde enerji üretiminde tamamen tüketilmiştir."
+            },
+            {
+                "key": "C",
+                "text": "Verilen solukta oksijen gazı tamamen tükenmiştir."
+            },
+            {
+                "key": "D",
+                "text": "Soluk alma sırasında karbondioksit gazı vücuda hiç giremez."
+            }
+        ],
+        "correctAnswer": "A",
+        "explanation": "Verilen solukta oksijenin %21’den %16’ya düşmesi oksijenin kana geçtiğini; karbondioksitin %0,04’ten %4,4’e çıkması ise hücresel solunum atığı CO2’in dışarı verildiğini gösterir."
+    },
+    {
+        "id": 7314,
+        "theme": "Alveol ve Kılcal Damar Etkileşimi",
+        "cognitiveLevel": "Mikroskobik Düzey Analizi",
+        "contextTitle": "Akciğer Alveollerinde Gaz Değişimi",
+        "scenario": "Akciğerlerde bronşçukların ucunda bulunan milyonlarca üzüm salkımı benzeri alveol kesesi, tek katlı ince epitel dokudan oluşur ve etrafı yoğun bir kılcal damar ağı ile sarılmıştır.",
+        "questionPrompt": "Alveoller ile kılcal damarlar arasındaki gaz geçişi ile ilgili aşağıdakilerden hangisi doğrudur?",
+        "options": [
+            {
+                "key": "A",
+                "text": "Alveoldeki karbondioksit kana, kandaki oksijen alveole geçer."
+            },
+            {
+                "key": "B",
+                "text": "Alveoldeki oksijen kana geçerken, kandaki karbondioksit alveol boşluğuna geçer."
+            },
+            {
+                "key": "C",
+                "text": "Alveoller gaz değişimi yapmaz, sadece havadaki mikropları yok eder."
+            },
+            {
+                "key": "D",
+                "text": "Alveollerde sadece su buharı emilir, oksijen emilimi midede gerçekleşir."
+            }
+        ],
+        "correctAnswer": "B",
+        "explanation": "Havadaki yüksek oksijen alveolden kılcal damardaki kana; kandaki yüksek karbondioksit ise kılcal damardan alveole geçerek solukla atılır."
+    },
+    {
+        "id": 7315,
+        "theme": "Solunum Sistemi Sağlığı",
+        "cognitiveLevel": "Günlük Yaşam ve Çıkarım",
+        "contextTitle": "Kapalı ve Havasız Odalarda Ders Çalışma",
+        "scenario": "Penceresi kapalı ve uzun süre havalandırılmamış bir odada ders çalışan bir öğrencide bir süre sonra esneme, dikkat dağınıklığı ve baş ağrısı şikâyetleri ortaya çıkmıştır. Odanın penceresi açılıp temiz hava girişi sağlandığında öğrencinin dikkati yeniden toplanmıştır.",
+        "questionPrompt": "Odanın havasız kalması sonucunda öğrencide halsizlik ve odaklanma güçlüğü oluşmasının nedeni nedir?",
+        "options": [
+            {
+                "key": "A",
+                "text": "Odadaki oksijen oranının azalıp karbondioksitin artması sonucu hücrelerde üretilen enerjinin azalması"
+            },
+            {
+                "key": "B",
+                "text": "Odadaki azot gazının solunum yollarını tıkaması"
+            },
+            {
+                "key": "C",
+                "text": "Öğrencinin alyuvarlarının tamamen parçalanması"
+            },
+            {
+                "key": "D",
+                "text": "Odadaki havanın sıcaklığının mutlak sıfıra düşmesi"
+            }
+        ],
+        "correctAnswer": "A",
+        "explanation": "Havasız ortamda CO2 birikir ve O2 azalır; beyin ve vücut hücrelerine yetersiz oksijen gittiğinde enerji üretimi düşer, yorgunluk ve uyku hali başlar."
+    },
+    {
+        "id": 7316,
+        "theme": "Boşaltım Sistemi ve Damar Analizi",
+        "cognitiveLevel": "Grafik ve Veri Yorumlama",
+        "contextTitle": "Böbrek Atardamarı ve Toplardamarı Madde Kıyaslaması",
+        "scenario": "Böbreklere kan getiren böbrek atardamarı ile böbreklerden çıkan böbrek toplardamarındaki kan analiz edilerek karşılaştırılmıştır:\n• Üre: Atardamarda ÇOK, Toplardamarda AZ\n• Tuz: Atardamarda ÇOK, Toplardamarda AZ\n• Su: Atardamarda %49,5, Toplardamarda %49,3",
+        "questionPrompt": "Bu analiz sonuçlarına göre böbreklerin temel görevi hakkında aşağıdaki yargılardan hangisine varılır?",
+        "options": [
+            {
+                "key": "A",
+                "text": "Böbrekler kan hücrelerini parçalayarak enerji üretir."
+            },
+            {
+                "key": "B",
+                "text": "Böbrekler kanı filtreleyerek üre ve fazla tuz gibi metabolik atıkları ayırıp idrarı oluşturur."
+            },
+            {
+                "key": "C",
+                "text": "Böbrekler kana besin ve hormon salgılayarak kan miktarını artırır."
+            },
+            {
+                "key": "D",
+                "text": "Böbrekler kanda bulunan suyun tamamını süzerek vücuttan dışarı atar."
+            }
+        ],
+        "correctAnswer": "B",
+        "explanation": "Böbrekler süzme (filtrasyon) yaparak kandaki üre ve tuz miktarını düşürür ve bu atıkları idrar torbasına gönderir."
+    },
+    {
+        "id": 7317,
+        "theme": "Boşaltım Organları Sıralaması",
+        "cognitiveLevel": "Anatomik Sıralama",
+        "contextTitle": "İdrarın Oluşumundan Dışarı Atılmasına Kadar İzlediği Yol",
+        "scenario": "Vücutta metabolik atıkların kandan temizlenip idrar halinde vücut dışına atılmasına kadar 4 temel yapı ve organ sırasıyla görev yapar.",
+        "questionPrompt": "İdrarın izlediği doğru sıralama aşağıdakilerin hangisinde verilmiştir?",
+        "options": [
+            {
+                "key": "A",
+                "text": "Böbrek ➔ Üretra ➔ Mesane ➔ Üreter"
+            },
+            {
+                "key": "B",
+                "text": "Mesane ➔ Böbrek ➔ Üreter ➔ Üretra"
+            },
+            {
+                "key": "C",
+                "text": "Böbrek ➔ Üreter ➔ Mesane (İdrar Kesesi) ➔ Üretra"
+            },
+            {
+                "key": "D",
+                "text": "Üreter ➔ Böbrek ➔ Üretra ➔ Mesane"
+            }
+        ],
+        "correctAnswer": "C",
+        "explanation": "İdrar böbreklerde oluşur, üreter (idrar borusu) ile mesaneye (idrar kesesi) taşınır, burada depolanır ve üretra (idrar kanalı) ile dışarı atılır."
+    },
+    {
+        "id": 7318,
+        "theme": "Boşaltım Sistemi Modeli",
+        "cognitiveLevel": "Model Analizi",
+        "contextTitle": "Huni, Pamuk ve Balonlu Süzme Düzeneği",
+        "scenario": "Öğrenciler bir huni içine pamuk yerleştirmiş, huninin ucunu bir plastik boruyla balona, balonu da bir pipetle toplama kabına bağlamıştır. Karışım huniye döküldüğünde katı maddeler pamukta kalırken sıvı kısım balonda birikmiş, ardından pipetten kaba akmıştır.",
+        "questionPrompt": "Bu modelde pamuklu huni, plastik boru ve balon sırasıyla hangi boşaltım organlarına karşılık gelir?",
+        "options": [
+            {
+                "key": "A",
+                "text": "Mesane - Üretra - Böbrek"
+            },
+            {
+                "key": "B",
+                "text": "Böbrek - Üreter - Mesane (İdrar Kesesi)"
+            },
+            {
+                "key": "C",
+                "text": "Üreter - Böbrek - Üretra"
+            },
+            {
+                "key": "D",
+                "text": "Böbrek - Üretra - Üreter"
+            }
+        ],
+        "correctAnswer": "B",
+        "explanation": "Süzmeyi yapan pamuklu huni böbrek, ileten boru üreter, depolayan balon ise mesanedir."
+    },
+    {
+        "id": 7319,
+        "theme": "Boşaltıma Yardımcı Organlar",
+        "cognitiveLevel": "Sistemler Arası İlişki",
+        "contextTitle": "Deri, Akciğer ve Karaciğerin Boşaltımdaki Rolü",
+        "scenario": "Boşaltım sadece böbreklerle sınırlı değildir; vücutta farklı organlar da atık maddelerin uzaklaştırılmasına veya zararsız hale getirilmesine destek olur.",
+        "questionPrompt": "Boşaltıma yardımcı organlar ve görevleri ile ilgili aşağıdaki eşleştirmelerden hangisi yanlıştır?",
+        "options": [
+            {
+                "key": "A",
+                "text": "Deri: Terleme yoluyla su ve tuzun fazlasını dışarı atar."
+            },
+            {
+                "key": "B",
+                "text": "Akciğerler: Soluk verme yoluyla karbondioksit ve su buharını vücuttan uzaklaştırır."
+            },
+            {
+                "key": "C",
+                "text": "Karaciğer: Protein atığı çok zehirli amonyağı daha az zararlı üreye dönüştürür."
+            },
+            {
+                "key": "D",
+                "text": "Kalın bağırsak: Kandaki üreyi ve zehirli gazları doğrudan süzerek dışarı atar."
+            }
+        ],
+        "correctAnswer": "D",
+        "explanation": "Kalın bağırsak kanı süzmez; sindirilmeyen posayı ve bir miktar suyu dışkı olarak atar. Kanı süzen organ böbrektir."
+    },
+    {
+        "id": 7320,
+        "theme": "Boşaltım Sistemi Sağlığı",
+        "cognitiveLevel": "Sağlık ve Klinik Çıkarım",
+        "contextTitle": "Böbrek Taşı Oluşumu ve Diyaliz Tedavisi",
+        "scenario": "Günde 1 litreden az su tüketen ve aşırı tuzlu gıdalarla beslenen bir bireyde şiddetli bel ve yan ağrısı şikayetiyle böbrek taşı teşhisi konulmuştur. Diğer yandan böbrekleri tamamen iflas eden bir hasta haftada 3 gün diyaliz makinesine bağlanmaktadır.",
+        "questionPrompt": "Böbrek sağlığının korunması ve tedavi yöntemleri ile ilgili aşağıdaki çıkarımlardan hangisi doğrudur?",
+        "options": [
+            {
+                "key": "A",
+                "text": "Böbrek taşı oluşumunu engellemek için tuz tüketimi artırılmalı, su içmekten kaçınılmalıdır."
+            },
+            {
+                "key": "B",
+                "text": "Diyaliz makinesi böbreklerin kanı filtreleme görevini üstlenerek kandaki zararlı atıkları temizler."
+            },
+            {
+                "key": "C",
+                "text": "Böbrek yetmezliği olan hastalara sadece karaciğer nakli yapılarak kesin tedavi sağlanır."
+            },
+            {
+                "key": "D",
+                "text": "Diyaliz tedavisi gören kişilerin böbrekleri normal insanlardan daha fazla idrar üretir."
+            }
+        ],
+        "correctAnswer": "B",
+        "explanation": "Diyaliz makinesi yapay bir böbrek gibi çalışır; hastanın kanındaki üre, fazla tuz ve toksinleri yarı geçirgen zarlardan süzerek kanı temizler."
+    }
+],
   colorTheme: {
     primary: 'from-emerald-600 to-teal-700',
     border: 'border-emerald-500/40',
@@ -96,7 +658,17 @@ export const grade7Unit3Data: Unit = {
         { id: 7, text: 'Pankreas öz suyu karbonhidrat, yağ ve proteinlerin üçünün birden kimyasal sindiriminde görev alır.', isCorrect: true, explanation: 'Doğrudur. Pankreas öz suyu her üç besin grubunu da sindiren enzimler içerir.' },
         { id: 8, text: 'Yağların kimyasal sindirimi midede başlar.', isCorrect: false, explanation: 'Yanlıştır. Yağların kimyasal sindirimi ince bağırsakta başlar ve yine ince bağırsakta biter.' },
         { id: 9, text: 'Uzun süre hareketsiz ekran başında kalmak bağırsak hareketlerini hızlandırarak sindirime fayda sağlar.', isCorrect: false, explanation: 'Yanlıştır. Hareketsizlik bağırsak hareketlerini yavaşlatır ve sindirim sorunlarına sebep olur.' },
-        { id: 10, text: 'Besinleri yavaş ve iyice çiğneyerek yemek mide ve bağırsakların iş yükünü hafifletir.', isCorrect: true, explanation: 'Doğrudur. Çiğneme besin yüzey alanını artırır ve sindirimi kolaylaştırır.' }
+        { id: 10, text: 'Besinleri yavaş ve iyice çiğneyerek yemek mide ve bağırsakların iş yükünü hafifletir.', isCorrect: true, explanation: 'Doğrudur. Çiğneme besin yüzey alanını artırır ve sindirimi kolaylaştırır.' },
+        {"id":11,"statement":"Besin maddelerinin dişler yardımıyla çiğnenmesi fiziksel sindirimi sağlar.","isCorrect":true,"explanation":"Dişler besinleri ezerek ve parçalayarak yüzey alanını artırır ve fiziksel sindirimi gerçekleştirir."},
+        {"id":12,"statement":"Kimyasal sindirim gerçekleştikten sonra besinler fiziksel sindirime uğrar.","isCorrect":false,"explanation":"Fiziksel sindirim önce gerçekleşerek besin yüzeyini artırır ve kimyasal sindirimi kolaylaştırır."},
+        {"id":13,"statement":"Yemek borusundaki peristaltik kas hareketleri sırasında besinlerin kimyasal sindirimi gerçekleşir.","isCorrect":false,"explanation":"Yemek borusunda hiçbir kimyasal veya fiziksel sindirim gerçekleşmez; sadece mideye iletim yapılır."},
+        {"id":14,"statement":"İnce bağırsaktaki villuslar besinlerle temas yüzeyini artırarak besin emilimini hızlandırır.","isCorrect":true,"explanation":"Villus adı verilen parmaksı çıkıntılar emilim yüzeyini katbekat artırarak sindirilen besinlerin kana geçişini kolaylaştırır."},
+        {"id":15,"statement":"Karaciğerin ürettiği safra sıvısı doğrudan kalın bağırsağa dökülür.","isCorrect":false,"explanation":"Safra sıvısı bir kanal aracılığıyla ince bağırsağa iletilir ve burada yağların fiziksel sindirimini sağlar."},
+        {"id":16,"statement":"Pankreas öz suyundaki enzimler karbonhidrat, yağ ve proteinlerin kimyasal sindirimini sağlar.","isCorrect":true,"explanation":"Pankreas öz suyu her üç temel besin grubunun kimyasal sindirimini tamamlayan enzimler içerir."},
+        {"id":17,"statement":"Midede kas hareketleriyle katı ve sıvı besinlerin karıştırılıp bulamaç hâline getirilmesi fiziksel sindirimdir.","isCorrect":true,"explanation":"Mide kaslarının kasılıp gevşemesiyle besinlerin kimusa (bulamaca) dönüştürülmesi mekanik bir olaydır."},
+        {"id":18,"statement":"Gün boyunca yeterli miktarda (yaklaşık 2 litre) su tüketmek sindirim sisteminin sağlıklı çalışmasını destekler.","isCorrect":true,"explanation":"Yeterli sıvı alımı sindirim enzimlerinin etkin çalışması ve kabızlığın önlenmesi için gereklidir."},
+        {"id":19,"statement":"Karaciğer ve pankreas sindirim kanalının organları olup besinler bu organların içinden geçer.","isCorrect":false,"explanation":"Karaciğer ve pankreas sindirime yardımcı organlardır; besinler bu organların içinden geçmez, salgılarını kanalla ince bağırsağa gönderirler."},
+        {"id":20,"statement":"Sindirim olayı sonucunda hücrelerdeki yaşamsal faaliyetler için gerekli enerji doğrudan açığa çıkar.","isCorrect":false,"explanation":"Sindirim besinleri kana ve hücreye geçecek boyuta küçültür; enerjinin açığa çıkması ise hücresel solunum ile gerçekleşir."}
       ],
       lgsQuestions: [
         {
@@ -493,7 +1065,17 @@ export const grade7Unit3Data: Unit = {
         { id: 7, text: 'Kan pulcukları (trombositler) yaralanma durumunda kanın pıhtılaşmasını sağlayarak aşırı kan kaybını önler.', isCorrect: true, explanation: 'Doğrudur. Pıhtılaşmayı sağlayarak damar deliğini kapatırlar.' },
         { id: 8, text: '18 yaşından küçük bireyler de Kızılay Kan Merkezlerine giderek düzenli kan bağışında bulunabilir.', isCorrect: false, explanation: 'Yanlıştır. Kan bağışı için yasal ve biyolojik yaş sınırı 18-65 yaş arasıdır (ve en az 50 kg).' },
         { id: 9, text: 'Organ bağışında öncelikle kan ve doku uyumu ile hastanın tıbbi aciliyet durumu dikkate alınır.', isCorrect: true, explanation: 'Doğrudur. Din, ırk, zenginlik ayrımı yapılmaz; doku uyumu ve aciliyet esastır.' },
-        { id: 10, text: 'Büyük kan dolaşımının amacı akciğerlerdeki kanı temizlemektir.', isCorrect: false, explanation: 'Yanlıştır. Kanı akciğerde temizleyen KÜÇÜK dolaşımdır; büyük dolaşımın amacı tüm vücut dokularına besin ve O2 dağıtmaktır.' }
+        { id: 10, text: 'Büyük kan dolaşımının amacı akciğerlerdeki kanı temizlemektir.', isCorrect: false, explanation: 'Yanlıştır. Kanı akciğerde temizleyen KÜÇÜK dolaşımdır; büyük dolaşımın amacı tüm vücut dokularına besin ve O2 dağıtmaktır.' },
+        {"id":11,"statement":"Kalpten vücut organlarına kan taşıyan damarlara atardamar denir.","isCorrect":true,"explanation":"Atardamarlar kanı kalpten uzaklaştırarak organlara ve dokulara iletir."},
+        {"id":12,"statement":"Toplardamarlar, atardamar ile kılcal damarlar arasında yer alır.","isCorrect":false,"explanation":"Kan akış sırası atardamar ➔ kılcal damar ➔ toplardamar şeklindedir."},
+        {"id":13,"statement":"Küçük kan dolaşımı kalbin sağ tarafındaki atardamar ile akciğerlere kan pompalanmasıyla başlar.","isCorrect":true,"explanation":"Kalbin sağ karıncığından çıkan akciğer atardamarı kirli kanı temizlenmek üzere akciğerlere taşır."},
+        {"id":14,"statement":"Büyük kan dolaşımı sırasında kandaki oksijen oranı artarken karbondioksit oranı azalır.","isCorrect":false,"explanation":"Büyük kan dolaşımında dokulara oksijen verilip karbondioksit alındığı için kandaki oksijen azalır, karbondioksit artar."},
+        {"id":15,"statement":"Kandaki alyuvarlar oksijen ve karbondioksit gazlarının taşınmasında görev yapar.","isCorrect":true,"explanation":"Alyuvarlar içerdikleri hemoglobin proteini sayesinde solunum gazlarını taşır ve kana kırmızı rengini verir."},
+        {"id":16,"statement":"Akyuvarlar vücudu mikroplara karşı savunan ve hastalık durumunda sayısı artan kan hücreleridir.","isCorrect":true,"explanation":"Akyuvarlar bağışıklık sisteminin temel hücreleridir ve enfeksiyon anında sayıları hızla artar."},
+        {"id":17,"statement":"Yaralanmalarda damar çeperinde pıhtılaşmayı sağlayarak kan kaybını önleyen hücreler kan pulcuklarıdır.","isCorrect":true,"explanation":"Kan pulcukları (trombositler) pıhtı tıkacı oluşturarak kanamanın durmasını sağlar."},
+        {"id":18,"statement":"18-65 yaş aralığında ve 50 kg üzerindeki sağlıklı her birey kan bağışında bulunabilir.","isCorrect":true,"explanation":"Kızılay ve Dünya Sağlık Örgütü standartlarına göre 18-65 yaş arası sağlıklı bireyler kan bağışı yapabilir."},
+        {"id":19,"statement":"Kan bağışı sonrasında vücuttaki kan miktarı her zaman eksik kalır ve kendini yenileyemez.","isCorrect":false,"explanation":"Vücut verilen kan hücrelerini ve plazmayı kısa süre içinde kemik iliği ve sıvılarla tamamen yeniler."},
+        {"id":20,"statement":"Kalbin kasılıp gevşemesi sırasında atardamar duvarında hissedilen ritmik vuruşlara nabız denir.","isCorrect":true,"explanation":"Kalbin her atımında atardamarlarda oluşturduğu basınç dalgası nabız olarak hissedilir."}
       ],
       lgsQuestions: [
         {
@@ -868,7 +1450,17 @@ export const grade7Unit3Data: Unit = {
         { id: 7, text: 'Sigara ve tütün kullanımı yalnızca akciğerlere zarar verir, dolaşım sistemine hiçbir zararı yoktur.', isCorrect: false, explanation: 'Yanlıştır. Sigara damarları tıkayarak kalp krizi ve tansiyon gibi ölümcül dolaşım sorunlarına da yol açar.' },
         { id: 8, text: 'Soluk borusunun kıkırdak halkaları borunun içe çöküp kapanmasını engeller.', isCorrect: true, explanation: 'Doğrudur. C şeklindeki kıkırdak halkalar hava yolunun daima açık kalmasını sağlar.' },
         { id: 9, text: 'Soluk alma anında karın boşluğunun hacmi genişler.', isCorrect: false, explanation: 'Yanlıştır. Diyafram aşağı inip düzleştiği için karın boşluğu sıkışır ve daralır.' },
-        { id: 10, text: 'Temiz havada yürüyüş yapmak ve düzenli spor yapmak akciğer kapasitesini artırır.', isCorrect: true, explanation: 'Doğrudur. Solunum kaslarını güçlendirir.' }
+        { id: 10, text: 'Temiz havada yürüyüş yapmak ve düzenli spor yapmak akciğer kapasitesini artırır.', isCorrect: true, explanation: 'Doğrudur. Solunum kaslarını güçlendirir.' },
+        {"id":11,"statement":"Solunan hava burundan geçerken burundaki kıllar, mukus ve kılcal damarlar sayesinde temizlenir, nemlendirilir ve ısıtılır.","isCorrect":true,"explanation":"Burun boşluğundaki mukus ve kıllar partikülleri tutar, kılcal damarlar ise havayı vücut sıcaklığına getirir."},
+        {"id":12,"statement":"Soluk alma sırasında diyafram kası gevşeyerek kubbeleşir.","isCorrect":false,"explanation":"Soluk alma sırasında diyafram kası kasılarak düzleşir, soluk verirken gevşeyerek kubbeleşir."},
+        {"id":13,"statement":"Soluk verme sırasında kaburgalar arası kaslar gevşer ve göğüs boşluğu daralır.","isCorrect":true,"explanation":"Kaslar gevşediğinde göğüs kafesi daralır, iç basınç artar ve hava dışarı atılır."},
+        {"id":14,"statement":"Akciğerlerdeki hava kesecikleri olan alveoller hava ile kan arasında gaz değişimini sağlar.","isCorrect":true,"explanation":"Alveollerin etrafındaki kılcal damarlarla hava arasında difüzyonla oksijen ve karbondioksit değişimi gerçekleşir."},
+        {"id":15,"statement":"Soluk borusunun yapısında bulunan kıkırdak halkalar borunun sürekli açık kalmasını destekler.","isCorrect":true,"explanation":"Kıkırdak halkalar soluk borusunun birbirine yapışmasını önleyerek kesintisiz hava geçişini sağlar."},
+        {"id":16,"statement":"Vücuttan dışarı verilen havadaki karbondioksit oranı, solunan havadakine göre daha yüksektir.","isCorrect":true,"explanation":"Solunan havada %0,04 karbondioksit varken verilen solukta bu oran yaklaşık %4,4 düzeyine çıkar."},
+        {"id":17,"statement":"Soluk borusu akciğerlere girerken iki ana kola ayrılır, bu kollara bronş adı verilir.","isCorrect":true,"explanation":"Soluk borusu sağ ve sol bronşlara ayrılır, bronşlar da bronşçuklara dallanır."},
+        {"id":18,"statement":"Tütün ürünlerinin kullanımı en çok sindirim sistemine zarar verir, solunum sistemini etkilemez.","isCorrect":false,"explanation":"Tütün dumanı en büyük zararı solunum sistemine (akciğer alveollerine ve bronşlara) verir."},
+        {"id":19,"statement":"Düzenli egzersiz yapmak solunum kaslarını güçlendirerek akciğer kapasitesini artırır.","isCorrect":true,"explanation":"Spor ve fiziksel aktivite diyafram ve kaburga kaslarını güçlendirerek solunum verimini yükseltir."},
+        {"id":20,"statement":"1-7 Mart haftası Yeşilay Haftası olarak kutlanır ve bağımlılıkla mücadelede toplumsal bilinç oluşturulur.","isCorrect":true,"explanation":"Yeşilay (Hilâl-i Ahdar) tütün, alkol ve madde bağımlılığına karşı toplumu bilinçlendiren kuruluştur."}
       ],
       lgsQuestions: [
         {
@@ -1261,7 +1853,17 @@ export const grade7Unit3Data: Unit = {
         { id: 7, text: 'Diyaliz makinesi, böbrek yetmezliği olan hastaların kanını yapay olarak süzen tıbbi bir aygıttır.', isCorrect: true, explanation: 'Doğrudur. Böbreğin süzme görevini üstlenir.' },
         { id: 8, text: 'İdrar kesesi (mesane) kemikten yapılmış sert bir kutudur.', isCorrect: false, explanation: 'Yanlıştır. Mesane genişleyip büzülebilen elastik düz kaslardan yapılmış bir torbadır.' },
         { id: 9, text: 'Zehrâvî ve Sabuncuoğlu Şerefeddin tarihte cerrahi aletler ve ameliyat çizimleriyle iz bırakmış hekimlerdir.', isCorrect: true, explanation: 'Doğrudur. Kitabın 140. sayfasında İz Bırakanlar bölümünde yer alırlar.' },
-        { id: 10, text: 'Bilinçsiz ve aşırı ilaç kullanımı böbrek dokularına hiçbir zarar vermez.', isCorrect: false, explanation: 'Yanlıştır. Aşırı antibiyotik ve ağrı kesiciler böbreklerde kalıcı yetmezliğe yol açabilir.' }
+        { id: 10, text: 'Bilinçsiz ve aşırı ilaç kullanımı böbrek dokularına hiçbir zarar vermez.', isCorrect: false, explanation: 'Yanlıştır. Aşırı antibiyotik ve ağrı kesiciler böbreklerde kalıcı yetmezliğe yol açabilir.' },
+        {"id":11,"statement":"Böbrekler kanı süzerek zararlı ve fazla maddeleri ayıklar ve idrarı oluşturur.","isCorrect":true,"explanation":"Böbreklerin temel görevi kanı süzerek metabolik atıkları (üre, fazla tuz vb.) idrar şeklinde uzaklaştırmaktır."},
+        {"id":12,"statement":"Böbrek atardamarındaki üre miktarı, böbrek toplardamarındaki üre miktarından daha azdır.","isCorrect":false,"explanation":"Böbreğe gelen kanda (atardamar) üre çoktur; süzüldükten sonra çıkan kanda (toplardamar) üre miktarı azalmıştır."},
+        {"id":13,"statement":"Böbreklerde oluşan idrarı idrar kesesine (mesaneye) taşıyan boru şeklindeki yapıya üreter denir.","isCorrect":true,"explanation":"Sağ ve sol böbrekten çıkan üreterler idrarı mesaneye iletir."},
+        {"id":14,"statement":"İdrar kesesinde biriken idrarın vücut dışına atılmasını sağlayan kanal üretradır.","isCorrect":true,"explanation":"Üretra boşaltım sisteminin idrarı dışarıya tahliye eden son kanalıdır."},
+        {"id":15,"statement":"Deri, terleme yoluyla vücuttan su ve tuz atarak boşaltıma yardımcı olur.","isCorrect":true,"explanation":"Ter bezleri su ve tuzun fazlasını atar ve aynı zamanda vücut sıcaklığını dengeler."},
+        {"id":16,"statement":"Akciğerler soluk verme sırasında vücuttan karbondioksit ve su buharı atarak boşaltıma yardımcı olur.","isCorrect":true,"explanation":"Solunum atığı olan CO2 ve su buharı akciğerler aracılığıyla dışarı atılır."},
+        {"id":17,"statement":"Karaciğer, proteinlerin parçalanmasıyla oluşan çok zehirli amonyağı daha az zararlı üreye dönüştürür.","isCorrect":true,"explanation":"Karaciğer amonyağı üreye çevirerek böbreklerin süzebileceği forma dönüştürür."},
+        {"id":18,"statement":"Kalın bağırsak sindirilmeyen besin atıkları ve bir miktar suyu dışkı yoluyla atarak boşaltıma yardımcı olur.","isCorrect":true,"explanation":"Sindirim atıklarının vücuttan atılması boşaltıma destek sağlar."},
+        {"id":19,"statement":"Yetersiz su tüketimi ve aşırı tuzlu beslenme böbrek taşı oluşma riskini artırır.","isCorrect":true,"explanation":"Az su içildiğinde idrar yoğunlaşır ve mineraller çökerek böbrek taşlarına dönüşebilir."},
+        {"id":20,"statement":"Böbrekleri çalışmayan hastaların kanı diyaliz makinesi yardımıyla süzülerek temizlenir.","isCorrect":true,"explanation":"Diyaliz makinesi böbreklerin süzme işlevini yapay olarak üstlenen tıbbi bir cihazdır."}
       ],
       lgsQuestions: [
         {

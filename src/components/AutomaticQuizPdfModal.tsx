@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useRef } from 'react';
 import { Unit, SubTopic, LgsQuestion, TrueFalseQuestion } from '../types/curriculum';
+import { balanceQuestionBankAnswers, sanitizeOptionText } from '../utils/questionQualityEngine';
 import {
   Printer,
   Sparkles,
@@ -16,7 +17,8 @@ import {
   Layers,
   HelpCircle,
   Clock,
-  Award
+  Award,
+  ShieldCheck
 } from 'lucide-react';
 
 interface Props {
@@ -197,8 +199,57 @@ export const AutomaticQuizPdfModal: React.FC<Props> = ({
       }
     }
 
+    // MEB Ölçme ve Değerlendirme Kalite Standartları:
+    // 1. Çoktan seçmeli (LGS) soruların doğru cevaplarını A, B, C, D seçeneklerine eşit olarak dağıt
+    // 2. Parantez içi ipuçlarını kaldır ve çeldirici cümle uzunluklarını doğru cevapla dengele
+    const lgsIndices: number[] = [];
+    selectedQuestions.forEach((q, idx) => {
+      if (q.type === 'lgs' && q.options && q.options.length === 4) {
+        lgsIndices.push(idx);
+      }
+    });
+
+    if (lgsIndices.length > 0) {
+      const lgsToBalance = lgsIndices.map(idx => selectedQuestions[idx]);
+      const balanced = balanceQuestionBankAnswers(lgsToBalance, seed);
+      lgsIndices.forEach((origIdx, bIdx) => {
+        selectedQuestions[origIdx] = {
+          ...selectedQuestions[origIdx],
+          options: balanced[bIdx].options,
+          correctAnswer: balanced[bIdx].correctAnswer,
+          explanation: balanced[bIdx].explanation
+        };
+      });
+    }
+
+    // 3. Doğru/Yanlış ve Açık Uçlu seçeneklerindeki parantez kalıntılarını temizle
+    selectedQuestions.forEach(q => {
+      if (q.options) {
+        q.options = q.options.map(o => ({ ...o, text: sanitizeOptionText(o.text) }));
+      }
+    });
+
     return selectedQuestions;
   }, [seed, questionCount, includeLgs, includeTf, includeOpenEnded, lgsPool, tfPool, openEndedPool]);
+
+  // Cevap anahtarı ve kalite istatistikleri
+  const answerStats = useMemo(() => {
+    const counts = { A: 0, B: 0, C: 0, D: 0, D_TF: 0, Y_TF: 0, totalLgs: 0, totalTf: 0 };
+    generatedExam.forEach(q => {
+      if (q.type === 'lgs') {
+        counts.totalLgs++;
+        if (q.correctAnswer === 'A') counts.A++;
+        else if (q.correctAnswer === 'B') counts.B++;
+        else if (q.correctAnswer === 'C') counts.C++;
+        else if (q.correctAnswer === 'D') counts.D++;
+      } else if (q.type === 'tf') {
+        counts.totalTf++;
+        if (q.correctAnswer === 'D') counts.D_TF++;
+        else if (q.correctAnswer === 'Y') counts.Y_TF++;
+      }
+    });
+    return counts;
+  }, [generatedExam]);
 
   if (!isOpen) return null;
 
@@ -391,6 +442,35 @@ export const AutomaticQuizPdfModal: React.FC<Props> = ({
             />
             <span>Çözüm Adımlarını Göster (Öğretmen Nüshası)</span>
           </label>
+        </div>
+
+        {/* MEB Maarif Ölçme ve Değerlendirme Kalite Güvencesi */}
+        <div className="bg-emerald-50/80 border-b border-emerald-200/80 px-5 sm:px-8 py-2.5 flex flex-wrap items-center justify-between gap-3 text-xs shrink-0">
+          <div className="flex items-center gap-2">
+            <span className="p-1 rounded-md bg-emerald-600 text-white flex items-center justify-center">
+              <ShieldCheck className="w-3.5 h-3.5" />
+            </span>
+            <span className="font-bold text-emerald-950">
+              MEB Ölçme ve Değerlendirme Standartları Devrede:
+            </span>
+            <span className="text-emerald-800">
+              Parantez içi ipuçları engellendi, çeldiriciler eşit uzunlukta dengelendi.
+            </span>
+          </div>
+
+          {answerStats.totalLgs > 0 && (
+            <div className="flex items-center gap-2 font-mono font-bold text-[11px] text-emerald-900 bg-white px-2.5 py-1 rounded-lg border border-emerald-200 shadow-2xs">
+              <span className="text-slate-500 font-sans font-semibold">Doğru Cevap Dağılımı:</span>
+              <span className="text-emerald-700">A ({answerStats.A})</span>
+              <span className="text-slate-300">•</span>
+              <span className="text-emerald-700">B ({answerStats.B})</span>
+              <span className="text-slate-300">•</span>
+              <span className="text-emerald-700">C ({answerStats.C})</span>
+              <span className="text-slate-300">•</span>
+              <span className="text-emerald-700">D ({answerStats.D})</span>
+              <span className="text-emerald-600 font-sans font-normal ml-1">(Eşit Dağılım)</span>
+            </div>
+          )}
         </div>
 
         {/* Printable & Scrollable Exam Sheet Area */}

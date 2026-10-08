@@ -95,9 +95,15 @@ export const InteractiveBookView: React.FC<Props> = ({
               <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200 font-mono">
                 {subTopic.shortTitle}
               </span>
-              <span className="px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-700 border border-slate-200">
-                Ders Kitabı (Sayfa {subTopic.pageRange})
-              </span>
+              {subTopic.pageRange ? (
+                <span className="px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-700 border border-slate-200">
+                  Ders Kitabı (Sayfa {subTopic.pageRange})
+                </span>
+              ) : (
+                <span className="px-3 py-1 rounded-full text-xs font-bold bg-indigo-50 text-indigo-800 border border-indigo-200">
+                  LGS Etkileşimli İstasyonları
+                </span>
+              )}
               {subTopic.concepts.map((concept, i) => (
                 <span
                   key={i}
@@ -112,7 +118,9 @@ export const InteractiveBookView: React.FC<Props> = ({
               {subTopic.title}
             </h1>
             <p className="text-xs sm:text-sm text-slate-600 mt-1.5 max-w-3xl leading-relaxed">
-              Ders kitabındaki tüm hazırlık, merak, ön değerlendirme, etkinlik, köprü, bilgi ve pekiştirme istasyonları sayfa sayfa sırasıyla dizilmiş; her soru altına tıklanabilir cevap kutucuğu yerleştirilmiştir.
+              {unit.grade === 8
+                ? 'LGS Fen Bilimleri hazırlık, merak, ön değerlendirme, deney, bilgi ve pekiştirme istasyonları sırasıyla listelenmiş; her soru altına tıklanabilir model çözüm kutucuğu yerleştirilmiştir.'
+                : 'Ders kitabındaki tüm hazırlık, merak, ön değerlendirme, etkinlik, köprü, bilgi ve pekiştirme istasyonları sayfa sayfa sırasıyla dizilmiş; her soru altına tıklanabilir cevap kutucuğu yerleştirilmiştir.'}
             </p>
           </div>
 
@@ -458,7 +466,7 @@ export const InteractiveBookView: React.FC<Props> = ({
           onClick={onGoToLgs}
           className="px-6 py-3 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs sm:text-sm flex items-center gap-2 shadow-sm transition-all cursor-pointer"
         >
-          LGS Mantık Muhakeme (20 Soru) <ArrowRight className="w-4 h-4 text-amber-300" />
+          LGS Mantıksal Muhakeme (Soru Havuzu) <ArrowRight className="w-4 h-4 text-amber-300" />
         </button>
       </div>
     </div>

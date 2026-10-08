@@ -48,6 +48,10 @@ export const App: React.FC = () => {
     setCurrentSubTopic(unit.subTopics[0]);
     if (unit.grade) {
       setCurrentGrade(unit.grade);
+      const isSystems = unit.grade === 8 || unit.id === 'g7-unit-3' || unit.id === 'g6-unit-3' || (unit.title && unit.title.toLowerCase().includes('sistem'));
+      if (isSystems && activeView === 'interactive-book') {
+        setActiveView('summary');
+      }
     }
   };
 
@@ -58,8 +62,11 @@ export const App: React.FC = () => {
     if (firstUnitForGrade) {
       setCurrentUnit(firstUnitForGrade);
       setCurrentSubTopic(firstUnitForGrade.subTopics[0]);
-      if (activeView === 'unit-end-20' && (!firstUnitForGrade.unitEnd20Questions || firstUnitForGrade.unitEnd20Questions.length === 0)) {
-        setActiveView('interactive-book');
+      const isSystems = grade === 8 || firstUnitForGrade.id === 'g7-unit-3' || firstUnitForGrade.id === 'g6-unit-3' || (firstUnitForGrade.title && firstUnitForGrade.title.toLowerCase().includes('sistem'));
+      if (isSystems && activeView === 'interactive-book') {
+        setActiveView('summary');
+      } else if (activeView === 'unit-end-20' && (!firstUnitForGrade.unitEnd20Questions || firstUnitForGrade.unitEnd20Questions.length === 0)) {
+        setActiveView(isSystems ? 'summary' : 'interactive-book');
       }
     }
     // Sınıf seçilince ana girişten ders ekranına geçiş
@@ -172,7 +179,7 @@ export const App: React.FC = () => {
                 />
               )}
 
-              {/* Tab 4: LGS Mantık Muhakeme (20 Soru) */}
+              {/* Tab 4: LGS Mantıksal Muhakeme (Soru Havuzu) */}
               {activeView === 'lgs' && (
                 <LgsQuestionBoard
                   unit={currentUnit}

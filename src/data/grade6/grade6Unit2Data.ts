@@ -1,4 +1,5 @@
 import { Unit } from '../../types/curriculum';
+import { odsgmGrade6Unit2Questions } from './odsgmQuestions';
 
 export const grade6Unit2Data: Unit = {
   id: 'g6-unit-2',
@@ -100,6 +101,7 @@ export const grade6Unit2Data: Unit = {
         { id: 5, text: 'Doğrultu birbirine zıt iki yönü kapsayan bir çizgidir.', isCorrect: true, explanation: 'Doğrudur. Örneğin Kuzey-Güney doğrultusu hem kuzey hem güney yönünü içerir.' }
       ],
       lgsQuestions: [
+        ...odsgmGrade6Unit2Questions.filter(q => q.subTopicId === 'g6-u2-sub1'),
         {
           id: 1,
           questionPrompt: 'Sürtünmesiz yatay bir zeminde durmakta olan bir kutuya doğu yönünde 10 N, batı yönünde 6 N büyüklüğünde iki kuvvet uygulanıyor.\n\nBu kutunun dengelenmiş kuvvetler etkisinde kalabilmesi için uygulanması gereken DENGELEYİCİ KUVVET hangisidir?',
@@ -193,6 +195,7 @@ export const grade6Unit2Data: Unit = {
         { id: 8, text: 'Virajı dönen bir aracın göstergesi sabit 60 km/h gösterse bile aracın hızı değişmektedir.', isCorrect: true, explanation: 'Doğrudur. Yön değiştiği için hız vektörü değişir.' }
       ],
       lgsQuestions: [
+        ...odsgmGrade6Unit2Questions.filter(q => q.subTopicId === 'g6-u2-sub2'),
         {
           id: 3,
           questionPrompt: 'Doğuya doğru 400 metre yol alan K aracı bu yolu 5 saatte, doğuya doğru 400 metre yer değiştiren L aracı ise 8 saatte tamamlıyor.\n\nBuna göre K ve L araçlarının süratleri karşılaştırıldığında hangisi doğrudur?',

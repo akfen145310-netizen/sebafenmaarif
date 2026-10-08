@@ -1,4 +1,5 @@
 import { Unit, SubTopic } from '../types/curriculum';
+import { balanceQuestionBankAnswers } from '../utils/questionQualityEngine';
 import { unit1Data } from './unit1Data';
 import { unit2Data } from './unit2Data';
 import { unit3Data } from './unit3Data';
@@ -108,10 +109,16 @@ const rawUnitsList: Unit[] = [
   ...grade8Units
 ];
 
-export const allUnits: Unit[] = rawUnitsList.map(unit => ({
+export const allUnits: Unit[] = rawUnitsList.map((unit, uIdx) => ({
   ...unit,
-  subTopics: unit.subTopics.map(sub => ({
+  unitEnd20Questions: unit.unitEnd20Questions && unit.unitEnd20Questions.length > 0
+    ? balanceQuestionBankAnswers(unit.unitEnd20Questions, uIdx * 13 + 5)
+    : undefined,
+  subTopics: unit.subTopics.map((sub, sIdx) => ({
     ...sub,
+    lgsQuestions: sub.lgsQuestions && sub.lgsQuestions.length > 0
+      ? balanceQuestionBankAnswers(sub.lgsQuestions, uIdx * 31 + sIdx * 7 + 11)
+      : [],
     interactiveBookFlow: sub.interactiveBookFlow && sub.interactiveBookFlow.length > 0
       ? sub.interactiveBookFlow
       : getCompleteInteractiveBookFlow(unit, sub)
@@ -183,15 +190,15 @@ export const availableGrades: GradeInfo[] = [
   {
     grade: 8,
     label: '8. Sınıf',
-    description: 'LGS Fen Bilimleri Ders Kitabı - 7 Ünite (321 Sayfa Tam ve Eksiksiz Etkileşimli Entegrasyon)',
+    description: 'LGS Fen Bilimleri - 7 Ünite (Konu Özeti, Doğru-Yanlış, LGS Mantıksal Muhakeme, Deney İstasyonu, 20 Soruluk Deneme Sınavları)',
     units: [
-      { id: 'g8-unit-1', unitNumber: 1, bookNumber: 1, title: 'Mevsimler ve İklim (LGS - s. 20-47)', isAvailable: true },
-      { id: 'g8-unit-2', unitNumber: 2, bookNumber: 1, title: 'DNA ve Genetik Kod (LGS - s. 48-103)', isAvailable: true },
-      { id: 'g8-unit-3', unitNumber: 3, bookNumber: 1, title: 'Basınç (LGS - s. 104-125)', isAvailable: true },
-      { id: 'g8-unit-4', unitNumber: 4, bookNumber: 1, title: 'Madde ve Endüstri (LGS - s. 126-193)', isAvailable: true },
-      { id: 'g8-unit-5', unitNumber: 5, bookNumber: 1, title: 'Basit Makineler (LGS - s. 194-223)', isAvailable: true },
-      { id: 'g8-unit-6', unitNumber: 6, bookNumber: 1, title: 'Enerji Dönüşümleri ve Çevre Bilimi (LGS - s. 224-271)', isAvailable: true },
-      { id: 'g8-unit-7', unitNumber: 7, bookNumber: 1, title: 'Elektrik Yükleri ve Elektrik Enerjisi (LGS - s. 272-310)', isAvailable: true }
+      { id: 'g8-unit-1', unitNumber: 1, bookNumber: 1, title: 'Mevsimler ve İklim', isAvailable: true },
+      { id: 'g8-unit-2', unitNumber: 2, bookNumber: 1, title: 'DNA ve Genetik Kod', isAvailable: true },
+      { id: 'g8-unit-3', unitNumber: 3, bookNumber: 1, title: 'Basınç', isAvailable: true },
+      { id: 'g8-unit-4', unitNumber: 4, bookNumber: 1, title: 'Madde ve Endüstri', isAvailable: true },
+      { id: 'g8-unit-5', unitNumber: 5, bookNumber: 1, title: 'Basit Makineler', isAvailable: true },
+      { id: 'g8-unit-6', unitNumber: 6, bookNumber: 1, title: 'Enerji Dönüşümleri ve Çevre Bilimi', isAvailable: true },
+      { id: 'g8-unit-7', unitNumber: 7, bookNumber: 1, title: 'Elektrik Yükleri ve Elektrik Enerjisi', isAvailable: true }
     ]
   }
 ];

@@ -99,9 +99,11 @@ export const BookActivitiesView: React.FC<Props> = ({
             <span className="px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-amber-500/20 text-amber-300 border border-amber-500/30">
               {unit.unitNumber}. Ünite • {subTopic.shortTitle}
             </span>
-            <span className="px-3 py-1 rounded-full text-xs font-bold bg-slate-800 text-slate-300 border border-slate-700">
-              Kitap Sayfa: {subTopic.pageRange}
-            </span>
+            {subTopic.pageRange && (
+              <span className="px-3 py-1 rounded-full text-xs font-bold bg-slate-800 text-slate-300 border border-slate-700">
+                Kitap Sayfa: {subTopic.pageRange}
+              </span>
+            )}
           </div>
 
           <h1 className="text-xl sm:text-3xl font-black text-white font-fredoka">

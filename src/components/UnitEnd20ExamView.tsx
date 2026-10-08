@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Unit } from '../types/curriculum';
+import { sanitizeOptionText } from '../utils/questionQualityEngine';
 import {
   Sparkles,
   CheckCircle2,
@@ -451,7 +452,7 @@ export const UnitEnd20ExamView: React.FC<Props> = ({
                 </span>
 
                 <div className="flex-1 text-sm sm:text-base font-medium leading-relaxed pt-0.5">
-                  {opt.text}
+                  {sanitizeOptionText(opt.text)}
                 </div>
 
                 {showFeedback && isOptCorrect && (

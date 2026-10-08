@@ -1,4 +1,5 @@
 import { Unit } from '../../types/curriculum';
+import { odsgmGrade6Unit4Questions } from './odsgmQuestions';
 
 export const grade6Unit4Data: Unit = {
   id: 'g6-unit-4',
@@ -74,6 +75,7 @@ export const grade6Unit4Data: Unit = {
         { id: 3, text: 'Gelme açısı gelen ışın ile ayna yüzeyi arasındaki açıdır.', isCorrect: false, explanation: 'Yanlıştır. Gelme açısı gelen ışın ile yüzey normali arasındaki açıdır.' }
       ],
       lgsQuestions: [
+        ...odsgmGrade6Unit4Questions.filter(q => q.subTopicId === 'g6-u4-sub1'),
         {
           id: 1,
           questionPrompt: 'Düzlem aynaya gelen bir ışının ayna yüzeyi ile yaptığı açı 40° olduğuna göre bu ışının YANSIMA AÇISI kaç derecedir?',

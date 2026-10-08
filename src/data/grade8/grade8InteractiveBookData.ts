@@ -2,12 +2,12 @@ import { InteractiveBookItem } from '../../types/curriculum';
 
 export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = {
   // ==========================================
-  // ÜNİTE 1: MEVSİMLER VE İKLİM (s. 20 - 47)
+  // ÜNİTE 1: MEVSİMLER VE İKLİM
   // ==========================================
   'g8-u1-sub1': [
     {
       id: 'g8-u1-s1-item1',
-      pageNumber: 'Sayfa 22',
+      pageNumber: '1. İstasyon',
       title: 'Mevsimler ve Başlangıç Sorusu',
       badge: 'Gözlem & Merak İstasyonu',
       type: 'merak_istasyonu',
@@ -23,7 +23,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
     },
     {
       id: 'g8-u1-s1-item2',
-      pageNumber: 'Sayfa 23',
+      pageNumber: '2. İstasyon',
       title: 'Eksen Eğikliği, Dolanma Düzlemi ve Ekvator Düzlemi',
       badge: 'Bilgi İstasyonu',
       type: 'bilgi_istasyonu',
@@ -38,7 +38,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
     },
     {
       id: 'g8-u1-s1-item3',
-      pageNumber: 'Sayfa 24',
+      pageNumber: '3. İstasyon',
       title: '1. Etkinlik: Dünya’nın Güneş Etrafındaki Dolanımını Modelliyorum',
       badge: '1. Etkinlik İstasyonu',
       type: 'etkinlik_istasyonu',
@@ -65,7 +65,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
     },
     {
       id: 'g8-u1-s1-item4',
-      pageNumber: 'Sayfa 25',
+      pageNumber: '4. İstasyon',
       title: 'Güneş Işınlarının Geliş Açısı, Aydınlanan Alan ve Gölge Boyu',
       badge: 'Bilgi İstasyonu',
       type: 'bilgi_istasyonu',
@@ -78,7 +78,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
     },
     {
       id: 'g8-u1-s1-item5',
-      pageNumber: 'Sayfa 26 - 27',
+      pageNumber: '5. İstasyon',
       title: 'Mevsimlerin Başlangıç Tarihleri (21 Haziran, 21 Aralık, 21 Mart, 23 Eylül)',
       badge: 'Bilgi İstasyonu',
       type: 'bilgi_istasyonu',
@@ -92,7 +92,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
     },
     {
       id: 'g8-u1-s1-item6',
-      pageNumber: 'Sayfa 28',
+      pageNumber: '6. İstasyon',
       title: '1. Bölüm Sonu Değerlendirmesi: Dolanım Modeli ve Ülkelerde Mevsimler',
       badge: 'Bölüm Sonu Değerlendirmesi',
       type: 'pekistirme_istasyonu',
@@ -110,7 +110,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
   'g8-u1-sub2': [
     {
       id: 'g8-u1-s2-item1',
-      pageNumber: 'Sayfa 30 - 31',
+      pageNumber: '1. İstasyon',
       title: 'İklim ve Hava Olayları Farkı & Yağış Türleri',
       badge: 'Bilgi İstasyonu',
       type: 'bilgi_istasyonu',
@@ -127,7 +127,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
     },
     {
       id: 'g8-u1-s2-item2',
-      pageNumber: 'Sayfa 32',
+      pageNumber: '2. İstasyon',
       title: 'Alçak ve Yüksek Basınç Alanları & Rüzgârın Oluşumu',
       badge: 'Keşif İstasyonu',
       type: 'bilgi_istasyonu',
@@ -141,7 +141,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
     },
     {
       id: 'g8-u1-s2-item3',
-      pageNumber: 'Sayfa 33',
+      pageNumber: '3. İstasyon',
       title: 'İklim Nedir? Klimatoloji ve Tablo 1.1 Karşılaştırma Matrisi',
       badge: 'Bilgi İstasyonu',
       type: 'bilgi_istasyonu',
@@ -155,7 +155,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
     },
     {
       id: 'g8-u1-s2-item4',
-      pageNumber: 'Sayfa 35 - 37',
+      pageNumber: '4. İstasyon',
       title: 'Küresel Isınma, Doğal Sera Etkisi ve Alınacak Tedbirler',
       badge: 'Çevre & Mühendislik İstasyonu',
       type: 'cagini_asanlar',
@@ -165,15 +165,15 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
         'IPCC Değerlendirme Raporu: İklim krizinin buzulların erimesine, deniz seviyelerinin yükselmesine ve ekstrem hava olaylarına yol açtığını vurgulamaktadır.',
         'Bireysel Tedbirler: Enerji tasarruflu lambalar kullanmak, toplu taşımayı tercih etmek, su israfını önlemek, ağaç dikmek.'
       ],
-      resultInfoBox: 'Kitaptaki Çarpıcı Veri (s. 37): Motorlu taşıt sahiplerinin yalnızca %1’i araç bakımını düzenli yaptırsa yılda 450 bin tondan fazla CO2 salımı önlenebilir.'
+      resultInfoBox: 'Çarpıcı Çevre Verisi: Motorlu taşıt sahiplerinin yalnızca %1’i araç bakımını düzenli yaptırsa yılda 450 bin tondan fazla CO2 salımı önlenebilir.'
     },
     {
       id: 'g8-u1-s2-item5',
-      pageNumber: 'Sayfa 38',
+      pageNumber: '5. İstasyon',
       title: '2. Bölüm Sonu Değerlendirmesi: Hava Olayı mı İklim mi? & Test',
       badge: 'Bölüm Sonu Değerlendirmesi',
       type: 'pekistirme_istasyonu',
-      prompt: 'Sayfa 38’de yer alan ifadelerin hava olayı ve iklim olarak sınıflandırılması ve çoktan seçmeli sorular.',
+      prompt: 'Verilen ifadelerin hava olayı ve iklim olarak sınıflandırılması ve çoktan seçmeli sorular.',
       evaluationQuestions: [
         {
           question: '1. "Bugün İstanbul’da sağanak yağmur bekleniyor." ifadesi hava olayı mıdır, iklim midir?',
@@ -189,12 +189,12 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
   ],
 
   // ==========================================
-  // ÜNİTE 2: DNA VE GENETİK KOD (s. 48 - 103)
+  // ÜNİTE 2: DNA VE GENETİK KOD
   // ==========================================
   'g8-u2-sub1': [
     {
       id: 'g8-u2-s1-item1',
-      pageNumber: 'Sayfa 50 - 51',
+      pageNumber: '1. İstasyon',
       title: 'Kalıtsal Yapıların Hiyerarşisi: Kromozom > DNA > Gen > Nükleotid',
       badge: 'Keşif İstasyonu',
       type: 'bilgi_istasyonu',
@@ -209,7 +209,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
     },
     {
       id: 'g8-u2-s1-item2',
-      pageNumber: 'Sayfa 52 - 53',
+      pageNumber: '2. İstasyon',
       title: 'Nükleotidin Yapısı ve İkili Sarmal Eşleşme Kuralları',
       badge: 'Bilgi İstasyonu',
       type: 'bilgi_istasyonu',
@@ -224,7 +224,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
     },
     {
       id: 'g8-u2-s1-item3',
-      pageNumber: 'Sayfa 54 - 55',
+      pageNumber: '3. İstasyon',
       title: 'Kromozom Sayısı ve Canlıların Gelişmişlik İlişkisizliği',
       badge: 'Bilgi İstasyonu',
       type: 'bilgi_istasyonu',
@@ -237,7 +237,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
     },
     {
       id: 'g8-u2-s1-item4',
-      pageNumber: 'Sayfa 56',
+      pageNumber: '4. İstasyon',
       title: '1. Etkinlik: DNA Modeli ve DNA Onarım Kuralları',
       badge: '1. Etkinlik İstasyonu',
       type: 'etkinlik_istasyonu',
@@ -263,7 +263,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
     },
     {
       id: 'g8-u2-s1-item5',
-      pageNumber: 'Sayfa 57 - 58',
+      pageNumber: '5. İstasyon',
       title: 'DNA’nın Kendini Eşlemesi ve 2. Etkinlik',
       badge: 'Deney & Eşlenme İstasyonu',
       type: 'etkinlik_istasyonu',
@@ -278,25 +278,25 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
     },
     {
       id: 'g8-u2-s1-item6',
-      pageNumber: 'Sayfa 59 - 60',
+      pageNumber: '6. İstasyon',
       title: 'Okuma Metni: Parmak İzi & 1. Bölüm Sonu Değerlendirmesi',
       badge: 'Okuma & Değerlendirme İstasyonu',
       type: 'pekistirme_istasyonu',
-      prompt: 'Tek yumurta ikizlerinde bile farklı olan parmak izinin adli tıptaki önemi ve sayfa 60 bölüm sonu soruları.',
+      prompt: 'Tek yumurta ikizlerinde bile farklı olan parmak izinin adli tıptaki önemi ve bölüm sonu değerlendirme soruları.',
       evaluationQuestions: [
         {
           question: 'Tek yumurta ikizlerinin DNA dizilimleri aynı olmasına rağmen parmak izleri neden birbirinden farklıdır?',
           answer: 'Parmak izleri sadece genetik yapıya değil; anne karnındaki amniyotik sıvının hareketine, büyüme hızına ve mekanik temaslara (çevresel faktörlere) bağlı olarak şekillenir.'
         }
       ],
-      resultInfoBox: 'Bölüm 1 tamamlandı. Sayfa 60’taki DNA eşleme çizimi ve çoktan seçmeli sorular çözüme hazırdır.'
+      resultInfoBox: 'Bölüm tamamlandı. İlgili DNA eşleme çizimi ve çoktan seçmeli sorular çözüme hazırdır.'
     }
   ],
 
   'g8-u2-sub2': [
     {
       id: 'g8-u2-s2-item1',
-      pageNumber: 'Sayfa 61 - 64',
+      pageNumber: '1. İstasyon',
       title: 'Mendel’in Bezelyeleri ve Kalıtım Kavramları',
       badge: 'Bilgi İstasyonu',
       type: 'bilgi_istasyonu',
@@ -313,7 +313,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
     },
     {
       id: 'g8-u2-s2-item2',
-      pageNumber: 'Sayfa 65 - 68',
+      pageNumber: '2. İstasyon',
       title: 'Tek Karakter Çaprazlamaları (F1 ve F2 Kuşakları)',
       badge: 'Uygulama İstasyonu',
       type: 'bilgi_istasyonu',
@@ -326,7 +326,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
     },
     {
       id: 'g8-u2-s2-item3',
-      pageNumber: 'Sayfa 69',
+      pageNumber: '3. İstasyon',
       title: '3. Etkinlik: Çaprazlama Yapıyorum',
       badge: '3. Etkinlik İstasyonu',
       type: 'etkinlik_istasyonu',
@@ -347,7 +347,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
     },
     {
       id: 'g8-u2-s2-item4',
-      pageNumber: 'Sayfa 70 - 71',
+      pageNumber: '4. İstasyon',
       title: 'İnsanda Cinsiyetin Kalıtımı ve Akraba Evliliklerinin Genetik Sonuçları',
       badge: 'Yaşam & Sağlık İstasyonu',
       type: 'bilgi_istasyonu',
@@ -362,11 +362,11 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
     },
     {
       id: 'g8-u2-s2-item5',
-      pageNumber: 'Sayfa 72',
+      pageNumber: '5. İstasyon',
       title: '2. Bölüm Sonu Değerlendirmesi: Çaprazlama & Cinsiyet Soruları',
       badge: 'Bölüm Sonu Değerlendirmesi',
       type: 'pekistirme_istasyonu',
-      prompt: 'Sayfa 72’de yer alan genotip boşlukları, 3. çocuğun erkek olma ihtimali ve çoktan seçmeli kalıtım soruları.',
+      prompt: 'İlgili genotip boşlukları, 3. çocuğun erkek olma ihtimali ve çoktan seçmeli kalıtım soruları.',
       evaluationQuestions: [
         {
           question: 'Bir ailenin 2 tane kız çocuğu vardır. 3. çocuklarının erkek olma ihtimali kaçtır?',
@@ -380,7 +380,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
   'g8-u2-sub3': [
     {
       id: 'g8-u2-s3-item1',
-      pageNumber: 'Sayfa 73 - 74',
+      pageNumber: '1. İstasyon',
       title: 'Mutasyon: Nedenleri, Özellikleri ve Örnekleri',
       badge: 'Bilgi İstasyonu',
       type: 'bilgi_istasyonu',
@@ -394,7 +394,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
     },
     {
       id: 'g8-u2-s3-item2',
-      pageNumber: 'Sayfa 75',
+      pageNumber: '2. İstasyon',
       title: 'Modifikasyon: Çevre Etkisiyle Ortaya Çıkan Kalıtsal Olmayan Değişimler',
       badge: 'Bilgi İstasyonu',
       type: 'bilgi_istasyonu',
@@ -408,15 +408,15 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
     },
     {
       id: 'g8-u2-s3-item3',
-      pageNumber: 'Sayfa 76 - 77',
+      pageNumber: '3. İstasyon',
       title: 'Mutasyon ile Modifikasyonun Farkı & Bölüm Sonu Değerlendirmesi',
       badge: 'Karşılaştırma & Değerlendirme',
       type: 'pekistirme_istasyonu',
-      prompt: 'Kitaptaki defter yaprağı analojisi, Örnek 4 tablosu ve sayfa 77 bölüm sonu soruları.',
+      prompt: 'Defter yaprağı analojisi, Örnek 4 tablosu ve bölüm sonu değerlendirme soruları.',
       evaluationQuestions: [
         {
-          question: 'Ders kitabında yer alan "deftere yazı yazıp silmek" ile "defterden sayfa yırtmak" benzetmesi neyi açıklar?',
-          answer: 'Deftere yazı yazıp silmek geçici olduğu için MODİFİKASYON’dur; defterden sayfa yırtıp parçalamak yapıyı kalıcı olarak bozduğu için MUTASYON’dur.'
+          question: 'Fen bilimlerinde "deftere yazı yazıp silmek" ile "defterin yaprağını yırtmak" benzetmesi neyi açıklar?',
+          answer: 'Deftere yazı yazıp silmek geçici olduğu için MODİFİKASYON’dur; defterin yaprağını yırtıp parçalamak yapıyı kalıcı olarak bozduğu için MUTASYON’dur.'
         }
       ],
       resultInfoBox: 'Gen yapısı değişiyorsa ➔ Mutasyon. Genin sadece işleyişi değişiyorsa ➔ Modifikasyon.'
@@ -426,7 +426,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
   'g8-u2-sub4': [
     {
       id: 'g8-u2-s4-item1',
-      pageNumber: 'Sayfa 78 - 79',
+      pageNumber: '1. İstasyon',
       title: 'Adaptasyon (Çevreye Uyum) ve Kamuflaj',
       badge: 'Doğa İstasyonu',
       type: 'bilgi_istasyonu',
@@ -441,13 +441,13 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
     },
     {
       id: 'g8-u2-s4-item2',
-      pageNumber: 'Sayfa 80 - 81',
+      pageNumber: '2. İstasyon',
       title: 'Doğal Seçilim, Varyasyon & Bölüm Sonu Değerlendirmesi',
       badge: 'Evrimsel Biyoloji & Değerlendirme',
       type: 'pekistirme_istasyonu',
       content: [
         'Doğal Seçilim: Çevre koşullarına uyum sağlayabilen canlıların hayatta kalıp üremesi, uyum sağlayamayanların ise avcılar veya doğa şartlarınca elenip yok olmasıdır.',
-        'Kahverengi Toprak Adası Örneği (s. 80): Kahverengi toprakta beyaz tavşanlar avcılarca (kartal, tilki) kolayca fark edilip avlanır; kahverengi tavşanlar kamufle olup ürer ve beyaz tavşan geni adadan elenir.',
+        'Kahverengi Toprak Adası Örneği ve Doğal Seçilim: Kahverengi toprakta beyaz tavşanlar avcılarca (kartal, tilki) kolayca fark edilip avlanır; kahverengi tavşanlar kamufle olup ürer ve beyaz tavşan geni adadan elenir.',
         'Sanayi Devrimi Güve Kelebekleri: Ağaç kabukları isle kaplanınca açık renkliler avlanmış, koyu renkliler doğal seçilimle çoğalmıştır.',
         'Varyasyon: Aynı türün bireyleri arasındaki kalıtsal çeşitliliktir (İnsanların farklı saç ve göz renkleri).'
       ],
@@ -457,14 +457,14 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
           answer: 'Canlının yaşama ve üreme şansını artıran kalıtsal birer ADAPTASYON örneğidir.'
         }
       ],
-      resultInfoBox: 'Bölüm tamamlandı! Sayfa 81’deki adaptasyon bilgi kartları çözüldü.'
+      resultInfoBox: 'Bölüm tamamlandı! Bölümdeki adaptasyon bilgi kartları çözüldü.'
     }
   ],
 
   'g8-u2-sub5': [
     {
       id: 'g8-u2-s5-item1',
-      pageNumber: 'Sayfa 82 - 84',
+      pageNumber: '1. İstasyon',
       title: 'Genetik Mühendisliği, Biyoteknoloji, Gen Aktarımı ve Klonlama',
       badge: 'Biyoteknoloji İstasyonu',
       type: 'bilgi_istasyonu',
@@ -478,7 +478,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
     },
     {
       id: 'g8-u2-s5-item2',
-      pageNumber: 'Sayfa 85 - 90',
+      pageNumber: '2. İstasyon',
       title: 'Gen Tedavisi, GDO, Biyoteknolojinin Yararları ve Riskleri',
       badge: 'Etik & Değerlendirme İstasyonu',
       type: 'pekistirme_istasyonu',
@@ -494,17 +494,17 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
           answer: 'Farklı türler arasında gen transferi yapıldığı için GEN AKTARIMI yöntemine örnektir.'
         }
       ],
-      resultInfoBox: '2. Ünitenin tüm alt bölümleri ve MEB ders kitabı akışı %100 eksiksiz tamamlanmıştır!'
+      resultInfoBox: '2. Ünitenin tüm alt bölümleri ve kazanım akışı %100 eksiksiz tamamlanmıştır!'
     }
   ],
 
   // ==========================================
-  // ÜNİTE 3: BASINÇ (s. 104 - 125)
+  // ÜNİTE 3: BASINÇ
   // ==========================================
   'g8-u3-sub1': [
     {
       id: 'g8-u3-s1-item1',
-      pageNumber: 'Sayfa 106 - 107',
+      pageNumber: '1. İstasyon',
       title: 'Katı Basıncı Tanımı ve Günlük Hayat Örnekleri',
       badge: 'Gözlem İstasyonu',
       type: 'bilgi_istasyonu',
@@ -518,7 +518,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
     },
     {
       id: 'g8-u3-s1-item2',
-      pageNumber: 'Sayfa 108',
+      pageNumber: '2. İstasyon',
       title: '1. Etkinlik: Kumda Oluşan İzler',
       badge: '1. Etkinlik İstasyonu',
       type: 'etkinlik_istasyonu',
@@ -542,7 +542,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
     },
     {
       id: 'g8-u3-s1-item3',
-      pageNumber: 'Sayfa 109',
+      pageNumber: '3. İstasyon',
       title: 'Katıların Kuvveti İletmesi Prensibi (Çivi ve Raptiye)',
       badge: 'Bilgi İstasyonu',
       type: 'bilgi_istasyonu',
@@ -558,7 +558,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
   'g8-u3-sub2': [
     {
       id: 'g8-u3-s2-item1',
-      pageNumber: 'Sayfa 110 - 111',
+      pageNumber: '1. İstasyon',
       title: 'Sıvı Basıncı, 2. ve 3. Etkinlik (Derinlik ve Yoğunluk İlişkisi)',
       badge: 'Deney İstasyonu',
       type: 'etkinlik_istasyonu',
@@ -582,7 +582,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
     },
     {
       id: 'g8-u3-s2-item2',
-      pageNumber: 'Sayfa 114 - 115',
+      pageNumber: '2. İstasyon',
       title: 'Pascal Prensibi ve Hidrolik Fren Sistemleri',
       badge: 'Teknoloji İstasyonu',
       type: 'bilgi_istasyonu',
@@ -600,7 +600,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
   'g8-u3-sub3': [
     {
       id: 'g8-u3-s3-item1',
-      pageNumber: 'Sayfa 112 - 113',
+      pageNumber: '1. İstasyon',
       title: 'Gaz Basıncı, Torricelli Deneyi ve 4. Etkinlik (Su Neden Dökülmüyor?)',
       badge: 'Tarih & Deney İstasyonu',
       type: 'etkinlik_istasyonu',
@@ -620,7 +620,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
     },
     {
       id: 'g8-u3-s3-item2',
-      pageNumber: 'Sayfa 116',
+      pageNumber: '2. İstasyon',
       title: '3. Bölüm Sonu Değerlendirmesi: Basınç Artırma/Azaltma & Meslekler',
       badge: 'Bölüm Sonu Değerlendirmesi',
       type: 'pekistirme_istasyonu',
@@ -636,12 +636,12 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
   ],
 
   // ==========================================
-  // ÜNİTE 4: MADDE VE ENDÜSTRİ (s. 126 - 193)
+  // ÜNİTE 4: MADDE VE ENDÜSTRİ
   // ==========================================
   'g8-u4-sub1': [
     {
       id: 'g8-u4-s1-item1',
-      pageNumber: 'Sayfa 128 - 130',
+      pageNumber: '1. İstasyon',
       title: 'Periyodik Sistemin Tarihçesi: Döbereiner, Newlands, Mendeleyev ve Moseley',
       badge: 'Bilim Tarihi İstasyonu',
       type: 'bilgi_istasyonu',
@@ -658,7 +658,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
     },
     {
       id: 'g8-u4-s1-item2',
-      pageNumber: 'Sayfa 131 - 133',
+      pageNumber: '2. İstasyon',
       title: 'Periyotlar, Gruplar ve Periyodik Özelliklerin Değişimi',
       badge: 'Bilgi İstasyonu',
       type: 'bilgi_istasyonu',
@@ -673,7 +673,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
     },
     {
       id: 'g8-u4-s1-item3',
-      pageNumber: 'Sayfa 134 - 138',
+      pageNumber: '3. İstasyon',
       title: 'Elementlerin Sınıflandırılması: Metal, Ametal, Yarı Metal, Soygaz',
       badge: 'Sınıflandırma & Değerlendirme',
       type: 'pekistirme_istasyonu',
@@ -683,14 +683,14 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
         'Yarı Metaller: Bor (B) ve Silisyum (Si). Fiziksel özellikleri metallere, kimyasal özellikleri ametallere benzer; yarı iletkendir.',
         'Soygazlar: 8A grubu (He, Ne, Ar, Kr, Xe, Rn). Kararlı yapıdadırlar, tek atomlu gaz halindedirler, bileşik yapmazlar.'
       ],
-      resultInfoBox: 'Bölüm 1 tamamlandı. Sayfa 138’deki yön analizi ve doğru/yanlış soruları kavrandı.'
+      resultInfoBox: 'Bölüm 1 tamamlandı. Bölümdeki yön analizi ve doğru/yanlış soruları kavrandı.'
     }
   ],
 
   'g8-u4-sub2': [
     {
       id: 'g8-u4-s2-item1',
-      pageNumber: 'Sayfa 139 - 140',
+      pageNumber: '1. İstasyon',
       title: 'Fiziksel Değişim ve 1. Etkinlik (Maddelerde Değişim)',
       badge: '1. Etkinlik İstasyonu',
       type: 'etkinlik_istasyonu',
@@ -710,7 +710,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
     },
     {
       id: 'g8-u4-s2-item2',
-      pageNumber: 'Sayfa 141 - 142',
+      pageNumber: '2. İstasyon',
       title: 'Kimyasal Değişim & 2. Bölüm Sonu Değerlendirmesi',
       badge: 'Bölüm Sonu Değerlendirmesi',
       type: 'pekistirme_istasyonu',
@@ -727,7 +727,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
   'g8-u4-sub3': [
     {
       id: 'g8-u4-s3-item1',
-      pageNumber: 'Sayfa 143 - 145',
+      pageNumber: '1. İstasyon',
       title: 'Kimyasal Tepkimeler ve Kütlenin Korunumu Kanunu',
       badge: 'Bilgi İstasyonu',
       type: 'bilgi_istasyonu',
@@ -741,11 +741,11 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
     },
     {
       id: 'g8-u4-s3-item2',
-      pageNumber: 'Sayfa 146',
+      pageNumber: '2. İstasyon',
       title: '3. Bölüm Sonu Değerlendirmesi: Kütle Hesabı ve Gümüş Kolye Olayı',
       badge: 'Problem Çözme İstasyonu',
       type: 'pekistirme_istasyonu',
-      prompt: 'Sayfa 146’daki 15 g A + B ➔ 70 g bileşik problemi ve havadaki gümüşün kararması yorumu.',
+      prompt: 'Verilen 15 g A + B ➔ 70 g bileşik problemi ve havadaki gümüşün kararması yorumu.',
       evaluationQuestions: [
         {
           question: 'A maddesinden 15 g alındığında 70 g bileşik oluştuğuna göre kullanılan B maddesi kaç gramdır?',
@@ -763,7 +763,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
   'g8-u4-sub4': [
     {
       id: 'g8-u4-s4-item1',
-      pageNumber: 'Sayfa 147 - 150',
+      pageNumber: '1. İstasyon',
       title: 'Asitler, Bazlar ve 2. Etkinlik (Lahana Suyu Doğal Ayıracı)',
       badge: '2. Etkinlik İstasyonu',
       type: 'etkinlik_istasyonu',
@@ -781,7 +781,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
     },
     {
       id: 'g8-u4-s4-item2',
-      pageNumber: 'Sayfa 151 - 154',
+      pageNumber: '2. İstasyon',
       title: 'pH Çizelgesi, 3, 4 ve 5. Etkinlikler (Maddelere Etkisi)',
       badge: 'Deney & Tehlike İstasyonu',
       type: 'etkinlik_istasyonu',
@@ -795,7 +795,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
     },
     {
       id: 'g8-u4-s4-item3',
-      pageNumber: 'Sayfa 155 - 157',
+      pageNumber: '3. İstasyon',
       title: 'Asit Yağmurları & 4. Bölüm Sonu Değerlendirmesi',
       badge: 'Çevre & Değerlendirme İstasyonu',
       type: 'pekistirme_istasyonu',
@@ -811,7 +811,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
   'g8-u4-sub5': [
     {
       id: 'g8-u4-s5-item1',
-      pageNumber: 'Sayfa 158 - 162',
+      pageNumber: '1. İstasyon',
       title: 'Isı, Sıcaklık ve Öz Isı (6, 7 ve 8. Etkinlikler)',
       badge: 'Deney & Değişken İstasyonu',
       type: 'etkinlik_istasyonu',
@@ -825,14 +825,14 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
     },
     {
       id: 'g8-u4-s5-item2',
-      pageNumber: 'Sayfa 163 - 171',
+      pageNumber: '2. İstasyon',
       title: 'Hâl Değişim Grafikleri, Platolar ve Günlük Yaşam Olayları',
       badge: 'Grafik & Değerlendirme İstasyonu',
       type: 'pekistirme_istasyonu',
       content: [
         'Hâl Değişimi Sabit Sıcaklık: Saf maddeler erirken ve kaynarken sıcaklıkları SABİT KALIR (grafikteki yatay düz çizgiler).',
         'Buharlaşma Isı Alır: Ele dökülen kolonyanın serinletmesi, kesilen karpuzun güneşte soğuması, testideki suyun soğuk kalması.',
-        'Sayfa 171 Öz Isı Sıralaması: Sıcaklığı en az artan P sıvısının öz ısısı en büyüktür (cP > cR > cS).'
+        'Öz Isı Sıralaması: Sıcaklığı en az artan P sıvısının öz ısısı en büyüktür (cP > cR > cS).'
       ],
       resultInfoBox: 'Bölüm 5 tamamlandı! Sıcaklık-zaman grafikleri ve öz ısı hesaplamaları pekiştirildi.'
     }
@@ -841,7 +841,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
   'g8-u4-sub6': [
     {
       id: 'g8-u4-s6-item1',
-      pageNumber: 'Sayfa 172 - 182',
+      pageNumber: '1. İstasyon',
       title: 'Türkiye’de Kimya Endüstrisi, Kuruluşlar ve Meslek Dalları',
       badge: 'Sanayi & Meslek İstasyonu',
       type: 'pekistirme_istasyonu',
@@ -850,17 +850,17 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
         'Dış Ticaret: Türkiye kimya ham maddesinde (özellikle ham petrol) %70 oranında dışa bağımlıdır.',
         'Meslekler: Kimya Mühendisi (tesis tasarımı ve ekonomik üretim), Kimyager (laboratuvarda madde analizi ve sentez), Kimya Teknisyeni, Metalurji Mühendisi, Eczacı.'
       ],
-      resultInfoBox: '4. Ünitenin tüm 6 alt bölümü ders kitabına birebir uygun olarak tamamlandı!'
+      resultInfoBox: '4. Ünitenin tüm 6 alt bölümü ve kazanımları birebir uygun olarak tamamlandı!'
     }
   ],
 
   // ==========================================
-  // ÜNİTE 5: BASİT MAKİNELER (s. 194 - 223)
+  // ÜNİTE 5: BASİT MAKİNELER
   // ==========================================
   'g8-u5-sub1': [
     {
       id: 'g8-u5-s1-item1',
-      pageNumber: 'Sayfa 196 - 198',
+      pageNumber: '1. İstasyon',
       title: 'Basit Makinelerin Sağladığı Avantajlar ve Genel Kurallar',
       badge: 'Temel Prensip İstasyonu',
       type: 'bilgi_istasyonu',
@@ -874,7 +874,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
     },
     {
       id: 'g8-u5-s1-item2',
-      pageNumber: 'Sayfa 199 - 201',
+      pageNumber: '2. İstasyon',
       title: 'Sabit Makara, Hareketli Makara ve Palangalar (1, 2 ve 3. Etkinlikler)',
       badge: 'Deney & Makara İstasyonu',
       type: 'etkinlik_istasyonu',
@@ -897,7 +897,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
   'g8-u5-sub2': [
     {
       id: 'g8-u5-s2-item1',
-      pageNumber: 'Sayfa 202 - 205',
+      pageNumber: '1. İstasyon',
       title: 'Kaldıraçlar ve 4. Etkinlik (Kuvvet ve Kuvvet Kolu)',
       badge: 'Archimedes & Kaldıraç İstasyonu',
       type: 'etkinlik_istasyonu',
@@ -914,7 +914,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
   'g8-u5-sub3': [
     {
       id: 'g8-u5-s3-item1',
-      pageNumber: 'Sayfa 205 - 208',
+      pageNumber: '1. İstasyon',
       title: 'Eğik Düzlem, Çıkrık ve 5. Etkinlik (Kuvvetten Kazanç)',
       badge: 'Rampa & Çıkrık İstasyonu',
       type: 'etkinlik_istasyonu',
@@ -931,7 +931,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
     },
     {
       id: 'g8-u5-s3-item2',
-      pageNumber: 'Sayfa 209 - 214',
+      pageNumber: '2. İstasyon',
       title: 'Vida, Dişli Çarklar, Bisiklet ve Bölüm Sonu Değerlendirmesi',
       badge: 'Bileşik Makine & Değerlendirme',
       type: 'pekistirme_istasyonu',
@@ -945,20 +945,20 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
   ],
 
   // ==========================================
-  // ÜNİTE 6: ENERJİ DÖNÜŞÜMLERİ VE ÇEVRE (s. 224 - 271)
+  // ÜNİTE 6: ENERJİ DÖNÜŞÜMLERİ VE ÇEVRE
   // ==========================================
   'g8-u6-sub1': [
     {
       id: 'g8-u6-s1-item1',
-      pageNumber: 'Sayfa 226 - 232',
+      pageNumber: '1. İstasyon',
       title: 'Besin Zinciri, Ekoloji Piramidi ve Paraşütlü Kediler',
       badge: 'Ekoloji İstasyonu',
       type: 'pekistirme_istasyonu',
       content: [
         'Besin Zinciri: Üretici (ototrof) ➔ 1. Tüketici (otçul) ➔ 2. Tüketici (etçil) ➔ 3. Tüketici (etçil/yırtıcı). Ayrıştırıcılar her basamaktadır.',
         'Ekoloji Piramidinde Yukarı Çıkıldıkça: Aktarılan enerji azalır (%10 kuralı), birey sayısı azalır, biyokütle azalır, BİYOLOJİK BİRİKİM (zehir) ARTAR.',
-        'Biyolojik Birikim (s. 230): Midye (2) ➔ Hamsi (10) ➔ İstavrit (50) ➔ Levrek (250) ➔ Ördek (1250 birim cıva).',
-        'Paraşütlü Kediler (s. 231): Sıtma için sıkılan DDT böcek ilacı besin zincirini çökertmiş, kediler ölünce fare salgını çıkmış ve İngiliz ordusu paraşütle kedi indirmiştir.'
+        'Biyolojik Birikim Analizi: Midye (2) ➔ Hamsi (10) ➔ İstavrit (50) ➔ Levrek (250) ➔ Ördek (1250 birim cıva).',
+        'Tarihsel Ekoloji Olayı (Paraşütlü Kediler): Sıtma için sıkılan DDT böcek ilacı besin zincirini çökertmiş, kediler ölünce fare salgını çıkmış ve İngiliz ordusu paraşütle kedi indirmiştir.'
       ],
       resultInfoBox: 'Biyolojik birikim piramidin tepesindeki son tüketicide EN FAZLADIR.'
     }
@@ -967,7 +967,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
   'g8-u6-sub2': [
     {
       id: 'g8-u6-s2-item1',
-      pageNumber: 'Sayfa 233 - 238',
+      pageNumber: '1. İstasyon',
       title: 'Fotosentez, 1. Etkinlik (Işık ve Lügol) & Hız Faktörleri',
       badge: '1. Etkinlik İstasyonu',
       type: 'etkinlik_istasyonu',
@@ -986,7 +986,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
     },
     {
       id: 'g8-u6-s2-item2',
-      pageNumber: 'Sayfa 239 - 241',
+      pageNumber: '2. İstasyon',
       title: 'Solunum Çeşitleri (Oksijenli, Oksijensiz, Fermantasyon) & Bölüm Sonu',
       badge: 'Hücresel Enerji & Değerlendirme',
       type: 'pekistirme_istasyonu',
@@ -1002,14 +1002,14 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
   'g8-u6-sub3': [
     {
       id: 'g8-u6-s3-item1',
-      pageNumber: 'Sayfa 242 - 253',
+      pageNumber: '1. İstasyon',
       title: 'Madde Döngüleri, Sera Etkisi ve Ekolojik Ayak İzi',
       badge: 'Döngüler & Ekoloji İstasyonu',
       type: 'pekistirme_istasyonu',
       content: [
         'Azot Döngüsü: Baklagil köklerindeki azot bağlayıcı bakteriler ve şimşek havadaki %78 azotu toprağa bağlar.',
         'Sera Etkisi: Fosil yakıtların çıkardığı CO2 ve CH4 gezegenin aşırı ısınmasına yol açar.',
-        'Ekolojik Ayak İzi (s. 252): Karbon (%46), Tarım arazisi (%35), Orman (%11), Otlak (%3), Yapılaşmış alan (%3), Balıkçılık (%2).'
+        'Ekolojik Ayak İzi Bileşenleri: Karbon (%46), Tarım arazisi (%35), Orman (%11), Otlak (%3), Yapılaşmış alan (%3), Balıkçılık (%2).'
       ],
       resultInfoBox: 'Dünya Limit Aşım Günü her yıl daha erkene kaymaktadır; doğal kaynaklar hızla tükenmektedir.'
     }
@@ -1018,7 +1018,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
   'g8-u6-sub4': [
     {
       id: 'g8-u6-s4-item1',
-      pageNumber: 'Sayfa 254 - 263',
+      pageNumber: '1. İstasyon',
       title: 'Sürdürülebilir Kalkınma, Su Tasarrufu ve Geri Dönüşüm',
       badge: 'Sürdürülebilirlik İstasyonu',
       type: 'pekistirme_istasyonu',
@@ -1032,12 +1032,12 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
   ],
 
   // ==========================================
-  // ÜNİTE 7: ELEKTRİK YÜKLERİ VE ENERJİ (s. 272 - 310)
+  // ÜNİTE 7: ELEKTRİK YÜKLERİ VE ENERJİ
   // ==========================================
   'g8-u7-sub1': [
     {
       id: 'g8-u7-s1-item1',
-      pageNumber: 'Sayfa 274 - 278',
+      pageNumber: '1. İstasyon',
       title: 'Elektrik Yükleri, Şimşek, Yıldırım ve 1. Etkinlik (Çubuklar)',
       badge: 'Elektrostatik İstasyonu',
       type: 'etkinlik_istasyonu',
@@ -1055,7 +1055,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
     },
     {
       id: 'g8-u7-s1-item2',
-      pageNumber: 'Sayfa 279 - 283',
+      pageNumber: '2. İstasyon',
       title: 'Sürtünme, Dokunma ve Etki ile Elektriklenme (2, 3 ve 4. Etkinlikler)',
       badge: 'Deney & Değerlendirme İstasyonu',
       type: 'pekistirme_istasyonu',
@@ -1071,7 +1071,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
   'g8-u7-sub2': [
     {
       id: 'g8-u7-s2-item1',
-      pageNumber: 'Sayfa 284 - 288',
+      pageNumber: '1. İstasyon',
       title: 'Elektroskop ve Topraklama Güvenliği',
       badge: 'Elektroskop & Güvenlik İstasyonu',
       type: 'pekistirme_istasyonu',
@@ -1089,7 +1089,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
   'g8-u7-sub3': [
     {
       id: 'g8-u7-s3-item1',
-      pageNumber: 'Sayfa 289 - 292',
+      pageNumber: '1. İstasyon',
       title: 'Elektrik Enerjisinin Isı, Işık ve Harekete Dönüşümü (3. Etkinlik)',
       badge: 'Dönüşüm İstasyonu',
       type: 'etkinlik_istasyonu',
@@ -1109,7 +1109,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
     },
     {
       id: 'g8-u7-s3-item2',
-      pageNumber: 'Sayfa 293 - 305',
+      pageNumber: '2. İstasyon',
       title: 'Güç Santralleri, Enerji Tasarrufu ve Bölüm Sonu Değerlendirmesi',
       badge: 'Santraller & Tasarruf İstasyonu',
       type: 'pekistirme_istasyonu',
@@ -1121,7 +1121,7 @@ export const grade8InteractiveBookFlow: Record<string, InteractiveBookItem[]> = 
         'Nükleer Santral: Uranyum atomunun parçalanmasıyla buhar türbini çalıştırılması (Akkuyu).',
         'Enerji Tasarrufu: A sınıfı cihazlar, yalıtım, buzdolabında %30 elektrik payı ve kaçak elektrik önlemleri.'
       ],
-      resultInfoBox: 'Tebrikler! 8. Sınıf MEB Fen Bilimleri Ders Kitabının (321 Sayfa) tüm ünite ve etkileşimli bölümleri eksiksiz entegre edildi!'
+      resultInfoBox: 'Tebrikler! 8. Sınıf LGS Fen Bilimleri tüm ünite ve etkileşimli istasyon bölümleri eksiksiz tamamlandı!'
     }
   ]
 };

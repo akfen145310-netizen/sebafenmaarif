@@ -446,15 +446,23 @@ export const Header: React.FC<Props> = ({
                         }`}>
                           {sub.title}
                         </h2>
-                        <span className="text-xs text-slate-500 font-normal">
-                          (Ders Kitabı s. {sub.pageRange})
-                        </span>
+                        {sub.pageRange && (
+                          <span className="text-xs text-slate-500 font-normal">
+                            (Ders Kitabı s. {sub.pageRange})
+                          </span>
+                        )}
                       </div>
 
                       <div className="flex items-center gap-2">
-                        <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
-                          Sayfa {sub.pageRange}
-                        </span>
+                        {sub.pageRange ? (
+                          <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
+                            Sayfa {sub.pageRange}
+                          </span>
+                        ) : (
+                          <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-200">
+                            {sub.badge || 'LGS Bölümü'}
+                          </span>
+                        )}
                         {isActive ? (
                           <span className="text-[11px] font-black text-emerald-800 flex items-center gap-1 bg-emerald-100 px-2.5 py-1 rounded-lg border border-emerald-300">
                             ✓ Seçili Bölüm
@@ -468,28 +476,32 @@ export const Header: React.FC<Props> = ({
                     </div>
 
                     {/* SEÇİLEN BÖLÜM TIKLANINCA: Altında Etkinlik ve Test Butonları (RESİM 1) */}
-                    {isActive && (
+                    {isActive && (() => {
+                      const isSystemsOrGrade8 = currentGrade === 8 || currentUnit.id === 'g7-unit-3' || currentUnit.id === 'g6-unit-3' || (currentUnit.title && currentUnit.title.toLowerCase().includes('sistem'));
+                      return (
                       <div className="mt-3 pt-3 border-t border-slate-100">
                         <div className="text-[11px] font-bold text-emerald-800 mb-2 flex items-center gap-1.5">
                           <span>Bölüm Etkinlikleri & Testleri:</span>
                         </div>
                         
                         <div className="flex flex-wrap items-center gap-2">
-                          {/* 1. Etkileşimli Kitap (Sayfa Sayfa) */}
-                          <button
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              onChangeView('interactive-book');
-                            }}
-                            className={`px-3.5 py-2 rounded-xl text-xs font-black transition-all flex items-center gap-1.5 cursor-pointer ${
-                              activeView === 'interactive-book'
-                                ? 'bg-emerald-600 text-white shadow-md shadow-emerald-700/20'
-                                : 'bg-white hover:bg-emerald-50 text-slate-700 hover:text-emerald-800 border border-slate-200'
-                            }`}
-                          >
-                            <Layers className="w-3.5 h-3.5" />
-                            <span>1. Etkileşimli Kitap (Sayfa Sayfa)</span>
-                          </button>
+                          {/* 1. Etkileşimli Kitap (Sayfa Sayfa - 5, 6, 7. sınıflar için, 8. sınıf ve Sistemler hariç) */}
+                          {!isSystemsOrGrade8 && (
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                onChangeView('interactive-book');
+                              }}
+                              className={`px-3.5 py-2 rounded-xl text-xs font-black transition-all flex items-center gap-1.5 cursor-pointer ${
+                                activeView === 'interactive-book'
+                                  ? 'bg-emerald-600 text-white shadow-md shadow-emerald-700/20'
+                                  : 'bg-white hover:bg-emerald-50 text-slate-700 hover:text-emerald-800 border border-slate-200'
+                              }`}
+                            >
+                              <Layers className="w-3.5 h-3.5" />
+                              <span>1. Etkileşimli Kitap (Sayfa Sayfa)</span>
+                            </button>
+                          )}
 
                           {/* 2. Konu Özeti & Sözlük */}
                           <button
@@ -504,10 +516,10 @@ export const Header: React.FC<Props> = ({
                             }`}
                           >
                             <BookOpen className="w-3.5 h-3.5" />
-                            <span>2. Konu Özeti & Sözlük</span>
+                            <span>{isSystemsOrGrade8 ? '1.' : '2.'} Konu Özeti & Sözlük</span>
                           </button>
 
-                          {/* 3. Doğru / Yanlış (10 Soru) */}
+                          {/* 3. Doğru / Yanlış (Soru Havuzu) */}
                           <button
                             onClick={(e) => {
                               e.stopPropagation();
@@ -520,10 +532,10 @@ export const Header: React.FC<Props> = ({
                             }`}
                           >
                             <CheckCircle2 className="w-3.5 h-3.5" />
-                            <span>3. Doğru / Yanlış (10 Soru)</span>
+                            <span>{isSystemsOrGrade8 ? '2.' : '3.'} Doğru / Yanlış (Soru Havuzu)</span>
                           </button>
 
-                          {/* 4. LGS Mantık Muhakeme (20 Soru) */}
+                          {/* 4. LGS Genel Bakış Muhakeme (Soru Havuzu) */}
                           <button
                             onClick={(e) => {
                               e.stopPropagation();
@@ -536,7 +548,7 @@ export const Header: React.FC<Props> = ({
                             }`}
                           >
                             <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-                            <span>4. LGS Mantık Muhakeme (20 Soru)</span>
+                            <span>{isSystemsOrGrade8 ? '3.' : '4.'} LGS Genel Bakış Muhakeme (Soru Havuzu)</span>
                           </button>
 
                           {/* 5. Deney İstasyonu (Laboratuvar) */}
@@ -587,7 +599,8 @@ export const Header: React.FC<Props> = ({
                           )}
                         </div>
                       </div>
-                    )}
+                      );
+                    })()}
                   </div>
                 );
               })}
@@ -604,23 +617,27 @@ export const Header: React.FC<Props> = ({
                 <span className="text-sm font-extrabold text-slate-900">
                   {currentSubTopic.title}
                 </span>
-                <span className="text-xs text-slate-500">
-                  (s. {currentSubTopic.pageRange})
-                </span>
+                {currentSubTopic.pageRange && (
+                  <span className="text-xs text-slate-500">
+                    (s. {currentSubTopic.pageRange})
+                  </span>
+                )}
               </div>
 
               <div className="flex flex-wrap items-center gap-2">
-                <button
-                  onClick={() => onChangeView('interactive-book')}
-                  className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
-                    activeView === 'interactive-book'
-                      ? 'bg-emerald-600 text-white'
-                      : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
-                  }`}
-                >
-                  <Layers className="w-3.5 h-3.5" />
-                  <span>Etkileşimli Kitap</span>
-                </button>
+                {!(currentGrade === 8 || currentUnit.id === 'g7-unit-3' || currentUnit.id === 'g6-unit-3' || (currentUnit.title && currentUnit.title.toLowerCase().includes('sistem'))) && (
+                  <button
+                    onClick={() => onChangeView('interactive-book')}
+                    className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
+                      activeView === 'interactive-book'
+                        ? 'bg-emerald-600 text-white'
+                        : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
+                    }`}
+                  >
+                    <Layers className="w-3.5 h-3.5" />
+                    <span>Etkileşimli Kitap</span>
+                  </button>
+                )}
                 <button
                   onClick={() => onChangeView('summary')}
                   className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
@@ -641,7 +658,7 @@ export const Header: React.FC<Props> = ({
                   }`}
                 >
                   <CheckCircle2 className="w-3.5 h-3.5" />
-                  <span>Doğru / Yanlış</span>
+                  <span>Doğru / Yanlış (Soru Havuzu)</span>
                 </button>
                 <button
                   onClick={() => onChangeView('lgs')}
@@ -652,7 +669,7 @@ export const Header: React.FC<Props> = ({
                   }`}
                 >
                   <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-                  <span>LGS Mantık Muhakeme</span>
+                  <span>LGS Genel Bakış Muhakeme</span>
                 </button>
                 <button
                   onClick={() => onChangeView('simulation')}
